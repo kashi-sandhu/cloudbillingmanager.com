@@ -1,0 +1,68 @@
+Cloud Billing Manager — Google indexing URL list
+Site: https://cloudbillingmanager.com
+Pages: 51
+Sitemap (submit in Search Console): https://cloudbillingmanager.com/sitemap-index.xml
+
+PRIORITY — request indexing first in Search Console URL Inspection:
+https://cloudbillingmanager.com/
+https://cloudbillingmanager.com/demo
+https://cloudbillingmanager.com/platform
+https://cloudbillingmanager.com/platform/inventory
+https://cloudbillingmanager.com/platform/billing
+https://cloudbillingmanager.com/platform/sales
+https://cloudbillingmanager.com/platform/pos
+https://cloudbillingmanager.com/industries
+https://cloudbillingmanager.com/industries/frozen-foods
+https://cloudbillingmanager.com/contact
+https://cloudbillingmanager.com/about
+https://cloudbillingmanager.com/blog
+https://cloudbillingmanager.com/resources
+
+ALL OTHER PAGES (38):
+https://cloudbillingmanager.com/why
+https://cloudbillingmanager.com/resources/inventory-management-checklist
+https://cloudbillingmanager.com/resources/inventory-management-guide
+https://cloudbillingmanager.com/resources/inventory-software-vs-spreadsheets
+https://cloudbillingmanager.com/resources/glossary
+https://cloudbillingmanager.com/press
+https://cloudbillingmanager.com/privacy
+https://cloudbillingmanager.com/terms
+https://cloudbillingmanager.com/platform/dashboard
+https://cloudbillingmanager.com/platform/pricing-engine
+https://cloudbillingmanager.com/platform/purchasing
+https://cloudbillingmanager.com/platform/supplier-payments
+https://cloudbillingmanager.com/platform/accounting
+https://cloudbillingmanager.com/platform/hr
+https://cloudbillingmanager.com/platform/customers
+https://cloudbillingmanager.com/platform/suppliers
+https://cloudbillingmanager.com/platform/customizable
+https://cloudbillingmanager.com/industries/fresh-foods
+https://cloudbillingmanager.com/industries/meat-suppliers
+https://cloudbillingmanager.com/industries/beverage-distribution
+https://cloudbillingmanager.com/industries/grocery-distribution
+https://cloudbillingmanager.com/industries/fmcg
+https://cloudbillingmanager.com/industries/restaurant-suppliers
+https://cloudbillingmanager.com/industries/wholesale-businesses
+https://cloudbillingmanager.com/industries/import-distribution
+https://cloudbillingmanager.com/blog/category/inventory-management
+https://cloudbillingmanager.com/blog/category/billing-invoicing
+https://cloudbillingmanager.com/blog/category/pos
+https://cloudbillingmanager.com/blog/category/sales-purchases
+https://cloudbillingmanager.com/blog/category/business-management
+https://cloudbillingmanager.com/blog/what-is-inventory-management
+https://cloudbillingmanager.com/blog/benefits-of-inventory-management-software
+https://cloudbillingmanager.com/blog/how-to-manage-stock-effectively
+https://cloudbillingmanager.com/blog/inventory-management-for-small-businesses
+https://cloudbillingmanager.com/blog/what-is-billing-software
+https://cloudbillingmanager.com/blog/how-to-track-unpaid-invoices
+https://cloudbillingmanager.com/blog/what-is-pos-software
+https://cloudbillingmanager.com/blog/pos-and-inventory-management
+
+After deploy:
+1. Verify https://cloudbillingmanager.com/robots.txt
+2. Verify https://cloudbillingmanager.com/sitemap-index.xml
+3. Submit sitemap in Google Search Console
+4. Request indexing on priority URLs above
+5. Wait 1–2 weeks, search: site:cloudbillingmanager.com
+
+Generated: 2026-09-07

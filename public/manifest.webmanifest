@@ -1,0 +1,19 @@
+{
+  "id": "https://cloudbillingmanager.com/",
+  "name": "Cloud Billing Manager",
+  "short_name": "CBM",
+  "description": "Official Cloud Billing Manager (cloudbillingmanager.com) — also CloudBilling Manager, CloudBillingManager. Smart Cloud ERP for UK Food Distribution Businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#163054",
+  "theme_color": "#3F68A8",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

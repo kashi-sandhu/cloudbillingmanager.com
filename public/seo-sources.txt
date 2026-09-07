@@ -1,0 +1,43 @@
+Cloud Billing Manager — SEO source files (final)
+Website: https://cloudbillingmanager.com
+
+SOURCE CODE (React / Vite)
+  index.html                          Static head: meta, link tags, JSON-LD bootstrap
+  src/components/seo/Seo.tsx          Runtime head tags + unified JSON-LD @graph
+  src/components/seo/Analytics.tsx    GA4 / Search Console / Bing verification
+  src/data/seoLinks.ts                preconnect, author, sitemap, discovery link tags
+  src/data/seoHead.ts                 robots, keywords, sameAs, OG defaults
+  src/data/seoSchema.ts               buildPrerenderJsonLdGraph (all schema types)
+  src/data/seo.ts                     getPageSeo, breadcrumbs, keywords, OG images
+  src/data/pageSeo.ts                 Titles, descriptions, FAQs per page
+  src/data/brand.ts                   alternateNames, brand entity
+  src/data/sitemap.ts                 51 URLs, image sitemap, urllist
+  scripts/seo-prerender-plugin.ts     51 prerendered HTML shells + 404
+  vite.config.ts                      Sitemap + PHP fallbacks generation
+
+PUBLIC / DEPLOY FILES (upload dist/ to public_html)
+  robots.txt
+  .htaccess
+  sitemap-pages.txt                   Recommended for Search Console if .xml fails
+  sitemap-pages.xml
+  sitemap.xml                         With image extensions
+  sitemap/sitemap-pages.xml
+  sitemap-pages.php / sitemap.php     cPanel PHP fallbacks
+  llms.txt                            AI crawler facts
+  brand.txt                           Plain brand entity
+  urllist.txt                         51 URL backup list
+  google-search-console-indexing.txt  Owner deploy guide
+  manifest.webmanifest
+  dist/seo-upload/                    Quick upload pack (12 files)
+
+COMMANDS
+  npm run build:seo       Build + verify + pack
+  npm run seo:audit       51-page audit
+  npm run seo:check-live  Test live site after deploy
+  npm run seo:pack        Copy critical files to dist/seo-upload/
+
+SEARCH CONSOLE
+  Submit sitemap: sitemap-pages.txt
+  Request indexing: homepage
+
+Generated: 2026-09-02

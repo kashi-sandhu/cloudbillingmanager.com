@@ -1,0 +1,94 @@
+# Cloud Billing Manager — Apache (cPanel) SPA + SEO HTML shells
+# Route folders (e.g. /demo/index.html) are served first so View Source has page SEO.
+# Unknown routes fall back to the React SPA shell.
+#
+# IMPORTANT: Do NOT redirect /about -> /about/
+# React routes are WITHOUT trailing slash. DirectorySlash would break every page.
+
+DirectoryIndex index.html
+DirectorySlash Off
+
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddType text/plain .txt
+</IfModule>
+
+# Force static SEO files (fixes .xml 500 on some cPanel hosts)
+<FilesMatch "^(sitemap-index\.xml|sitemap\.xml|sitemap-pages\.xml|sitemap-core\.xml|sitemap-platform\.xml|sitemap-industries\.xml|sitemap-blog\.xml|sitemap-resources\.xml|sitemap-pages\.txt|sitemap\.php|sitemap-pages\.php|robots\.txt|llms\.txt|brand\.txt|urllist\.txt|google-search-console-indexing\.txt|google-index-pages\.txt|seo-manifest\.json|manifest\.webmanifest|DEPLOY-SEO-NOW\.txt)$">
+  SetHandler default-handler
+  RemoveHandler .xml
+</FilesMatch>
+
+<Files "sitemap-pages.txt">
+  ForceType application/xml
+</Files>
+
+<Files "sitemap.xml">
+  ForceType application/xml
+</Files>
+<Files "sitemap-pages.xml">
+  ForceType application/xml
+</Files>
+<Files "sitemap-index.xml">
+  ForceType application/xml
+</Files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Canonical host: https://cloudbillingmanager.com (non-www, HTTPS)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+  RewriteCond %{HTTP_HOST} ^www\.cloudbillingmanager\.com$ [NC]
+  RewriteRule ^ https://cloudbillingmanager.com%{REQUEST_URI} [L,R=301,NE]
+
+  # Canonical URLs: strip trailing slash (except site root)
+  # Fixes React Router 404: /about/ does not match route /about
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^ %1 [R=301,L]
+
+  # Static SEO / verification files — must exist in public_html (upload from dist/)
+  RewriteRule ^sitemap/ - [L,NC]
+  RewriteRule ^robots\.txt$ - [L,NC]
+  RewriteRule ^sitemap-index\.xml$ - [L,NC]
+  RewriteRule ^sitemap-pages\.txt$ - [L,NC]
+  RewriteRule ^sitemap\.xml$ - [L,NC]
+  RewriteRule ^sitemap-pages\.xml$ - [L,NC]
+  RewriteRule ^sitemap-core\.xml$ - [L,NC]
+  RewriteRule ^sitemap-platform\.xml$ - [L,NC]
+  RewriteRule ^sitemap-industries\.xml$ - [L,NC]
+  RewriteRule ^sitemap-blog\.xml$ - [L,NC]
+  RewriteRule ^sitemap-resources\.xml$ - [L,NC]
+  RewriteRule ^sitemap-pages\.php$ - [L,NC]
+  RewriteRule ^sitemap\.php$ - [L,NC]
+  RewriteRule ^DEPLOY-SEO-NOW\.txt$ - [L,NC]
+  RewriteRule ^llms\.txt$ - [L,NC]
+  RewriteRule ^brand\.txt$ - [L,NC]
+  RewriteRule ^urllist\.txt$ - [L,NC]
+  RewriteRule ^google-index-pages\.txt$ - [L,NC]
+  RewriteRule ^seo-manifest\.json$ - [L,NC]
+  RewriteRule ^google-search-console-indexing\.txt$ - [L,NC]
+  RewriteRule ^seo-sources\.txt$ - [L,NC]
+  RewriteRule ^manifest\.webmanifest$ - [L,NC]
+
+  # Google Search Console HTML-file verification (e.g. google123abc.html)
+  RewriteRule ^google[a-z0-9]+\.html$ - [L,NC]
+
+  # Dedicated 404 page (noindex — see dist/404.html)
+  RewriteRule ^404\.html$ - [L,NC]
+
+  # Serve prerendered route folders without requiring a trailing slash
+  # /about  ->  /about/index.html
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+
+  # Existing files (assets, images, etc.)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # SPA fallback for client-only routes
+  RewriteRule ^ index.html [L]
+</IfModule>

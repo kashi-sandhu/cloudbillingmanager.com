@@ -1,0 +1,6 @@
+Date,Page,Change,Reason,Expected Impact,Actual Impact (fill after 4-8 weeks)
+2026-08-25,/resources,Created resources hub + inventory checklist,Phase 5 linkable assets,Earn editorial links / assist topical authority,
+2026-08-25,sitewide,Phases 1-4 technical + on-page SEO,Foundation,Indexability and conversion readiness,
+2026-08-25,sitewide,Phases 6-9 monitoring semantic media geo,Entity clarity + measurement readiness,Better crawl understanding / AI-readable facts,
+2026-08-25,/industries/*,Unique industry SEO copy + related modules,Phase 10 thin-content fix,Reduce industry cannibalization / improve relevance,
+2026-08-25,vercel.json + _redirects,Protect sitemap/robots/static from SPA fallback,Phase 10 crawlability,Ensure sitemap.xml returns XML not app shell,

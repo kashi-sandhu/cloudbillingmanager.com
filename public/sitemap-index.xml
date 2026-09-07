@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Cloud Billing Manager - Google sitemap index | Submit this file in Search Console -->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap-pages.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap-core.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap-platform.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap-industries.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap-blog.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap-resources.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://cloudbillingmanager.com/sitemap/sitemap-pages.xml</loc>
+    <lastmod>2026-09-07</lastmod>
+  </sitemap>
+</sitemapindex>

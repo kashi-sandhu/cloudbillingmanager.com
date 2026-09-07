@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Cloud Billing Manager</ShortName>
+  <Description>Search pages on cloudbillingmanager.com</Description>
+  <Tags>Cloud Billing Manager ERP food distribution UK</Tags>
+  <Contact>sophia@cloudbillingmanager.com</Contact>
+  <Url type="text/html" template="https://cloudbillingmanager.com/urllist.txt" />
+  <Url type="application/rss+xml" template="https://cloudbillingmanager.com/sitemap-pages.xml" />
+  <Language>en-GB</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

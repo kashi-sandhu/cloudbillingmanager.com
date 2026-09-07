@@ -1,0 +1,114 @@
+Cloud Billing Manager — COMPLETE Google indexing process
+Website: https://cloudbillingmanager.com
+Updated: 2026-09-07
+
+================================================================================
+A) PEHLE DIST UPLOAD KAREIN (404 FIX + SEO)
+================================================================================
+
+1. PC pe folder open karein:
+   C:\Users\pc\Desktop\websites\cloudbillingmanager\dist\
+
+2. cPanel → File Manager → public_html
+   Poori dist/ contents upload/replace karein (purani files overwrite).
+
+3. ZAROORI replace:
+   - .htaccess          (trailing-slash 404 fix)
+   - assets/            (naya JavaScript)
+   - sitemap-index.xml
+   - sitemap-pages.xml, sitemap-core.xml, sitemap-platform.xml
+   - sitemap-industries.xml, sitemap-blog.xml, sitemap-resources.xml
+   - sitemap.xml, robots.txt
+   - about/, demo/, platform/, industries/, blog/, resources/, …
+
+4. Browser me hard refresh (Ctrl+F5) aur test:
+   https://cloudbillingmanager.com/about
+   https://cloudbillingmanager.com/demo
+   https://cloudbillingmanager.com/platform
+   https://cloudbillingmanager.com/contact
+   → "Page not found" NAHI aana chahiye
+
+5. Sitemap test (XML dikhna chahiye):
+   https://cloudbillingmanager.com/sitemap-index.xml
+   https://cloudbillingmanager.com/sitemap-pages.xml
+   https://cloudbillingmanager.com/robots.txt
+
+================================================================================
+B) GOOGLE SEARCH CONSOLE — SITEMAP SUBMIT
+================================================================================
+
+1. Open: https://search.google.com/search-console
+
+2. Property select: cloudbillingmanager.com
+   (agar nahi hai → Add property → Domain → DNS TXT verify)
+
+3. Left menu → Sitemaps (or Indexing → Sitemaps)
+
+4. "Add a new sitemap" box me SIRF yeh type karein:
+   sitemap-index.xml
+
+   Full URL banega:
+   https://cloudbillingmanager.com/sitemap-index.xml
+
+5. Submit dabayein
+   Status: Success / "Sitemap index processed" wait karein (minutes–hours)
+
+6. Agar index fail ho (rare):
+   backup submit: sitemap-pages.xml
+
+================================================================================
+C) URL INSPECTION — PRIORITY PAGES
+================================================================================
+
+Search Console → URL Inspection → har URL paste → "Request indexing":
+
+  https://cloudbillingmanager.com/
+  https://cloudbillingmanager.com/demo
+  https://cloudbillingmanager.com/platform
+  https://cloudbillingmanager.com/platform/inventory
+  https://cloudbillingmanager.com/about
+  https://cloudbillingmanager.com/contact
+  https://cloudbillingmanager.com/industries
+  https://cloudbillingmanager.com/blog
+
+================================================================================
+D) TIMING (1 WEEK LIVE KA MATLAB)
+================================================================================
+
+- Pehle wala 1 week: inner pages "Page not found" thin → indexing weak thi
+- NAYA clock: jab naya dist upload + sitemap submit ho
+- Us ke baad usually 3–14 din me pages dikhni shuru
+- Check: site:cloudbillingmanager.com
+
+================================================================================
+E) SITEMAP-INDEX.XML ME KYA HAI (8 CHILD SITEMAPS)
+================================================================================
+
+  1. sitemap-pages.xml       — all 51 public URLs
+  2. sitemap-core.xml        — home, about, demo, contact, …
+  3. sitemap-platform.xml    — all platform modules
+  4. sitemap-industries.xml  — all industry pages
+  5. sitemap-blog.xml        — blog + categories + articles
+  6. sitemap-resources.xml   — guides + glossary
+  7. sitemap.xml             — pages + images
+  8. sitemap/sitemap-pages.xml — host-safe mirror
+
+Google rule: sitemap-index me sirf XML sitemaps hoti hain (page URLs nahi).
+
+================================================================================
+F) CLOUDFLARE (agar use karte hain)
+================================================================================
+
+Security → Bots → Allow verified bots (Googlebot)
+Sitemap / robots.txt pe challenge page na aaye
+
+================================================================================
+G) QUICK CHECKLIST
+================================================================================
+
+[ ] dist/ uploaded to public_html
+[ ] /about /demo /platform open OK (no Page not found)
+[ ] sitemap-index.xml opens as XML
+[ ] GSC: sitemap-index.xml submitted
+[ ] GSC: Request indexing on priority URLs
+[ ] Wait 3–14 days → site:cloudbillingmanager.com
