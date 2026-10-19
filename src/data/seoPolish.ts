@@ -11,6 +11,7 @@ function pageKind(pathname: string): PageKind {
   if (pathname.startsWith('/industries/')) return 'industry'
   if (pathname.startsWith('/blog')) return 'blog'
   if (pathname.startsWith('/resources')) return 'resource'
+  if (pathname === '/pricing') return 'product'
   if (pathname === '/privacy' || pathname === '/terms') return 'legal'
   if (pathname === '/demo' || pathname === '/contact' || pathname === '/why') return 'commercial'
   return 'utility'

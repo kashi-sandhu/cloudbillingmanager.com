@@ -2,11 +2,15 @@
 # Route folders (e.g. /demo/index.html) are served first so View Source has page SEO.
 # Unknown routes fall back to the React SPA shell.
 #
-# IMPORTANT: Do NOT redirect /about -> /about/
-# React routes are WITHOUT trailing slash. DirectorySlash would break every page.
+# Cloudflare may add a trailing slash. React strips it client-side.
+# DirectorySlash must stay Off so /about serves about/index.html without a 301 loop.
 
 DirectoryIndex index.html
 DirectorySlash Off
+Options -Indexes
+
+# SPA soft-404 — never return a bare Apache 404 for unknown paths (hurts Google)
+ErrorDocument 404 /index.html
 
 <IfModule mod_mime.c>
   AddType application/xml .xml
@@ -44,10 +48,25 @@ DirectorySlash Off
   RewriteCond %{HTTP_HOST} ^www\.cloudbillingmanager\.com$ [NC]
   RewriteRule ^ https://cloudbillingmanager.com%{REQUEST_URI} [L,R=301,NE]
 
-  # Canonical URLs: strip trailing slash (except site root)
-  # Fixes React Router 404: /about/ does not match route /about
-  RewriteCond %{REQUEST_URI} ^(.+)/$
-  RewriteRule ^ %1 [R=301,L]
+  # Old Resources hub → Pricing (keep child /resources/* guides)
+  RewriteRule ^resources/?$ /pricing [R=301,L]
+
+  # Legacy WordPress / old-site URLs → new SPA paths (fixes GSC 404s)
+  RewriteRule ^privacy-policy/?$ /privacy [R=301,L,NC]
+  RewriteRule ^about-us/?$ /about [R=301,L,NC]
+  RewriteRule ^contact-us/?$ /contact [R=301,L,NC]
+  RewriteRule ^create-ticket/?$ /contact [R=301,L,NC]
+  RewriteRule ^terms-of-service/?$ /terms [R=301,L,NC]
+  RewriteRule ^terms-and-conditions/?$ /terms [R=301,L,NC]
+  RewriteRule ^features/purchase-receipts/?$ /platform/purchasing [R=301,L,NC]
+  RewriteRule ^features/?$ /platform [R=301,L,NC]
+  RewriteRule ^10-top-tips-for-making-your-saas-product-sticky/?$ /blog [R=301,L,NC]
+
+  # Common typos / truncated URLs (WhatsApp / GSC copies)
+  RewriteRule ^blog/category/business-managemen/?$ /blog/category/business-management [R=301,L,NC]
+  RewriteRule ^blog/category/sales-purchase/?$ /blog/category/sales-purchases [R=301,L,NC]
+  RewriteRule ^images/og/cloudbillingmanager-og\.jp$ /images/og/cloudbillingmanager-og.jpg [R=301,L,NC]
+  RewriteRule ^banners/customers\.web$ /banners/customers.webp [R=301,L,NC]
 
   # Static SEO / verification files — must exist in public_html (upload from dist/)
   RewriteRule ^sitemap/ - [L,NC]
@@ -89,6 +108,6 @@ DirectorySlash Off
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # SPA fallback for client-only routes
+  # SPA fallback for client-only / unknown routes (never hard-404)
   RewriteRule ^ index.html [L]
 </IfModule>

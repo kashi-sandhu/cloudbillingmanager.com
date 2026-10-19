@@ -102,8 +102,8 @@ export default function InventoryVsSpreadsheets() {
           <FaqSection faqs={staticPageSeo['/resources/inventory-software-vs-spreadsheets']?.faqs ?? []} />
 
           <div className="mt-8">
-            <Button to="/resources" variant="outline" className="w-full sm:w-auto">
-              Back to resources
+            <Button to="/blog" variant="outline" className="w-full sm:w-auto">
+              Back to blog
             </Button>
           </div>
         </div>

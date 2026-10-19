@@ -1,6 +1,7 @@
 import { getBlogArticle, blogArticles, blogCategories } from './blog.ts'
 import { brand } from './brand.ts'
 import { company, industries, modules, telHref } from './content.ts'
+import { pricingPlans } from './pricing.ts'
 import { getIndustryPageSeo } from './industrySeo.ts'
 import { getPageRelatedLinks } from './seoPageHead.ts'
 import { entitySameAs } from './seoHead.ts'
@@ -161,7 +162,7 @@ export function buildPrerenderJsonLdGraph(
       url: company.groupSite,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/brand/cloudbillingmanager-logo.png`,
+        url: `${siteUrl}/images/brand/cloudbillingmanager-icon.png`,
       },
       description: company.positioning,
       email: company.email,
@@ -204,7 +205,7 @@ export function buildPrerenderJsonLdGraph(
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/brand/cloudbillingmanager-logo.png`,
+        url: `${siteUrl}/images/brand/cloudbillingmanager-icon.png`,
       },
       description: company.positioning,
       parentOrganization: { '@id': `${siteUrl}/#organization` },
@@ -229,9 +230,21 @@ export function buildPrerenderJsonLdGraph(
       provider: { '@id': `${siteUrl}/#organization` },
       areaServed: { '@type': 'Country', name: 'United Kingdom' },
       offers: {
-        '@type': 'Offer',
+        '@type': 'AggregateOffer',
+        priceCurrency: 'GBP',
+        lowPrice: '59',
+        highPrice: '199',
+        offerCount: pricingPlans.length,
         availability: 'https://schema.org/OnlineOnly',
-        url: `${siteUrl}/demo`,
+        url: `${siteUrl}/pricing`,
+        offers: pricingPlans.map((plan) => ({
+          '@type': 'Offer',
+          name: `${plan.name} plan`,
+          price: plan.price.replace(/[^\d.]/g, ''),
+          priceCurrency: 'GBP',
+          url: `${siteUrl}/pricing`,
+          availability: 'https://schema.org/OnlineOnly',
+        })),
       },
     },
   ]
@@ -294,7 +307,7 @@ export function buildPrerenderJsonLdGraph(
           name: company.presenter,
           logo: {
             '@type': 'ImageObject',
-            url: `${siteUrl}/images/brand/cloudbillingmanager-logo.png`,
+            url: `${siteUrl}/images/brand/cloudbillingmanager-icon.png`,
           },
         },
         mainEntityOfPage: { '@id': `${url}#webpage` },
@@ -339,6 +352,27 @@ export function buildPrerenderJsonLdGraph(
         description: item.definition,
         inDefinedTermSet: `${siteUrl}/resources/glossary`,
       })),
+    })
+  }
+
+  if (pathname === '/pricing') {
+    graph.push({
+      '@type': 'CollectionPage',
+      '@id': `${url}#pricing`,
+      name: title,
+      description,
+      url,
+      isPartOf: { '@id': `${siteUrl}/#website` },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: pricingPlans.map((plan, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${plan.name} — ${plan.price}${plan.period}`,
+          url: `${siteUrl}/pricing`,
+          description: plan.summary,
+        })),
+      },
     })
   }
 

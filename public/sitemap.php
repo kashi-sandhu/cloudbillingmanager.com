@@ -12,351 +12,366 @@ echo <<<'SITEMAP'
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://cloudbillingmanager.com/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/brand/cloudbillingmanager-logo.webp</image:loc><image:title>Cloud Billing Manager logo — official cloudbillingmanager.com brand</image:title></image:image>
+    <image:image><image:loc>https://cloudbillingmanager.com/images/brand/cloudbillingmanager-icon.png</image:loc><image:title>Cloud Billing Manager icon</image:title></image:image>
     <image:image><image:loc>https://cloudbillingmanager.com/images/products/cloudbillingmanager-sales-invoice.webp</image:loc><image:title>Cloud Billing Manager sales invoice screen showing invoice header, line items and totals</image:title></image:image>
     <image:image><image:loc>https://cloudbillingmanager.com/images/products/cloudbillingmanager-pos-workstation.webp</image:loc><image:title>Cloud Billing Manager POS workstation with laptop billing screen, barcode scanner and receipt printer</image:title></image:image>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Cloud Billing Manager — inventory, billing and POS for UK food distributors</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/about</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/brand/cloudbillingmanager-logo.webp</image:loc><image:title>Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Cloud Billing Manager platform</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/why</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Why Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/contact</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Contact Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/demo</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Cloud Billing Manager demo</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Cloud Billing Manager blog</image:title></image:image>
   </url>
   <url>
-    <loc>https://cloudbillingmanager.com/resources</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://cloudbillingmanager.com/pricing</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Cloud Billing Manager pricing plans</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://cloudbillingmanager.com/features/ai-whatsapp-ordering</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cloudbillingmanager.com/features/fleet-logistics</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/resources/inventory-management-checklist</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/resources/inventory-management-guide</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/inventory.webp</image:loc><image:title>Inventory management guide visual</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/resources/inventory-software-vs-spreadsheets</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/resources/glossary</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/press</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/privacy</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/terms</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/dashboard</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/dashboard.webp</image:loc><image:title>Powerful Dashboard Features — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/sales</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/products/cloudbillingmanager-sales-invoice.webp</image:loc><image:title>Cloud Billing Manager sales invoice screen</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/pricing-engine</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/pricing-engine.webp</image:loc><image:title>Intelligent Customer Pricing Engine — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/billing</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/billing.webp</image:loc><image:title>Customer Billing &amp; Financial Management — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/purchasing</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/purchasing.webp</image:loc><image:title>Purchase Order Management — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/supplier-payments</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/supplier-payments.webp</image:loc><image:title>Supplier Payments &amp; Financial Management — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/inventory</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/inventory.webp</image:loc><image:title>Inventory operations for food distribution stock control</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/accounting</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/accounting.webp</image:loc><image:title>Accounting &amp; Financial Management — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/hr</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/hr.webp</image:loc><image:title>User &amp; HR Management — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/customers</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/customers.webp</image:loc><image:title>Customer Onboarding — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/suppliers</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/suppliers.webp</image:loc><image:title>Supplier Onboarding — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/customizable</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/customizable.webp</image:loc><image:title>Fully Customizable System — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/platform/pos</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/pos.webp</image:loc><image:title>Point of Sale (POS) — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/frozen-foods</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Frozen Foods — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/fresh-foods</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Fresh Foods — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/meat-suppliers</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Meat Suppliers — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/beverage-distribution</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Beverage Distribution — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/grocery-distribution</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Grocery Distribution — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/fmcg</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>FMCG — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/restaurant-suppliers</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Restaurant Suppliers — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/wholesale-businesses</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Wholesale Businesses — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/industries/import-distribution</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Import &amp; Distribution — Cloud Billing Manager</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/category/inventory-management</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Inventory Management — Cloud Billing Manager blog</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/category/billing-invoicing</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Billing &amp; Invoicing — Cloud Billing Manager blog</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/category/pos</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>POS — Cloud Billing Manager blog</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/category/sales-purchases</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Sales &amp; Purchases — Cloud Billing Manager blog</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/category/business-management</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/images/og/cloudbillingmanager-og.jpg</image:loc><image:title>Business Management — Cloud Billing Manager blog</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/what-is-inventory-management</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-inventory-intro.jpg</image:loc><image:title>Warehouse aisle with labelled grocery cartons illustrating inventory management</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/benefits-of-inventory-management-software</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-inventory-benefits.jpg</image:loc><image:title>Tablet showing stock levels in a warehouse aisle for inventory software benefits</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/how-to-manage-stock-effectively</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-stock-control.jpg</image:loc><image:title>Stock count clipboard beside food product shelving for stock control guidance</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/inventory-management-for-small-businesses</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-small-business.jpg</image:loc><image:title>Small wholesale storeroom shelves illustrating inventory for growing businesses</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/what-is-billing-software</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-billing.jpg</image:loc><image:title>Accounts desk with invoices and ledger folders illustrating billing software</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/how-to-track-unpaid-invoices</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-unpaid.jpg</image:loc><image:title>Invoice aging report and folders illustrating tracking unpaid invoices</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/what-is-pos-software</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-pos.jpg</image:loc><image:title>Retail POS counter with scanner and grocery products for point of sale software</image:title></image:image>
   </url>
   <url>
     <loc>https://cloudbillingmanager.com/blog/pos-and-inventory-management</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://cloudbillingmanager.com/banners/blog-pos-inventory.jpg</image:loc><image:title>Cash and carry checkout with POS terminal and stock shelves behind</image:title></image:image>

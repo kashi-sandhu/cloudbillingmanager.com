@@ -40,6 +40,40 @@ export const companyPhones = [
   { label: 'Landline', display: company.landline, href: telHref(company.landline) },
 ] as const
 
+/** WhatsApp chat link from the primary UK mobile number. */
+export function whatsappHref(display = company.phone): string {
+  const digits = display.replace(/[^\d+]/g, '')
+  const e164 = digits.startsWith('+')
+    ? digits.slice(1)
+    : digits.startsWith('0')
+      ? `44${digits.slice(1)}`
+      : digits
+  return `https://wa.me/${e164}`
+}
+
+export const companySocial = [
+  {
+    id: 'facebook',
+    label: 'Facebook',
+    href: 'https://www.facebook.com/cloudbillingmanager',
+  },
+  {
+    id: 'instagram',
+    label: 'Instagram',
+    href: 'https://www.instagram.com/cloudbillingmanager/',
+  },
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/avantcore/',
+  },
+  {
+    id: 'whatsapp',
+    label: 'WhatsApp',
+    href: whatsappHref(),
+  },
+] as const
+
 export const audiences = [
   'Food Distributors',
   'Wholesalers',

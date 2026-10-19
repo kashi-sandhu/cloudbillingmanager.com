@@ -1,27 +1,41 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { ArrowRight, BookOpen, ChevronDown, Factory, HelpCircle, Home, LayoutGrid, Mail, Menu, Phone, X } from 'lucide-react'
+import { ArrowRight, BookOpen, ChevronDown, Factory, HelpCircle, Home, LayoutGrid, Mail, Menu, MessageSquare, Phone, PoundSterling, Truck, X } from 'lucide-react'
 import { company, modules, telHref } from '../../data/content.ts'
+import { featurePaths } from '../../data/features.ts'
 import { moduleIcons } from '../../data/icons.ts'
 import Button from '../ui/Button.tsx'
 import Logo from '../ui/Logo.tsx'
 import IconBadge from '../ui/IconBadge.tsx'
 
 const links = [
-  { to: '/platform', label: 'Platform' },
+  { to: '/platform', label: 'Inventory' },
   { to: '/industries', label: 'Industries' },
   { to: '/why', label: 'Why CBM' },
   { to: '/about', label: 'About' },
-  { to: '/resources', label: 'Resources' },
+  { to: '/pricing', label: 'Pricing' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ]
 
 const platformColumns = [
-  ['dashboard', 'sales', 'pos', 'inventory', 'purchasing'],
+  ['dashboard', 'sales', 'pos', 'inventory'],
   ['pricing-engine', 'billing', 'supplier-payments', 'accounting'],
-  ['hr', 'customers', 'suppliers', 'customizable'],
+  ['hr', 'customers', 'suppliers', 'customizable', 'purchasing'],
+] as const
+
+const platformFeatureLinks = [
+  {
+    to: featurePaths.whatsappOrdering,
+    label: 'AI WhatsApp Ordering',
+    icon: MessageSquare,
+  },
+  {
+    to: featurePaths.fleetLogistics,
+    label: 'Fleet & Logistics',
+    icon: Truck,
+  },
 ] as const
 
 export default function Header() {
@@ -40,26 +54,47 @@ export default function Header() {
     if (!open) return
 
     const scrollY = window.scrollY
+    const header = document.querySelector('.site-header')
+    const headerHeight =
+      header instanceof HTMLElement ? Math.round(header.getBoundingClientRect().height) : 80
+
+    document.documentElement.style.setProperty('--site-header-height', `${headerHeight}px`)
+    document.documentElement.classList.add('is-mobile-menu-open')
+
+    // Keep layout height when header becomes fixed (stops content jump)
+    const spacer = document.createElement('div')
+    spacer.setAttribute('data-header-menu-spacer', '')
+    spacer.style.height = `${headerHeight}px`
+    spacer.style.width = '100%'
+    spacer.setAttribute('aria-hidden', 'true')
+    header?.parentElement?.insertBefore(spacer, header.nextSibling)
+
     const { style } = document.body
     const previous = {
       overflow: style.overflow,
       position: style.position,
       top: style.top,
+      left: style.left,
+      right: style.right,
       width: style.width,
     }
 
     style.overflow = 'hidden'
     style.position = 'fixed'
     style.top = `-${scrollY}px`
+    style.left = '0'
+    style.right = '0'
     style.width = '100%'
-    document.documentElement.classList.add('is-mobile-menu-open')
 
     return () => {
       style.overflow = previous.overflow
       style.position = previous.position
       style.top = previous.top
+      style.left = previous.left
+      style.right = previous.right
       style.width = previous.width
       document.documentElement.classList.remove('is-mobile-menu-open')
+      spacer.remove()
       window.scrollTo(0, scrollY)
     }
   }, [open])
@@ -68,13 +103,23 @@ export default function Header() {
     if (!open) return
 
     function blockBackgroundScroll(event: TouchEvent) {
-      const nav = document.querySelector('.burger-nav')
-      if (nav?.contains(event.target as Node)) return
+      const target = event.target as Node | null
+      const overlay = document.querySelector('.burger-overlay')
+      const toggle = document.querySelector('.burger-toggle')
+      if (overlay?.contains(target) || toggle?.contains(target)) return
       event.preventDefault()
     }
 
+    function onKey(event: KeyboardEvent) {
+      if (event.key === 'Escape') setOpen(false)
+    }
+
     document.addEventListener('touchmove', blockBackgroundScroll, { passive: false })
-    return () => document.removeEventListener('touchmove', blockBackgroundScroll)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('touchmove', blockBackgroundScroll)
+      document.removeEventListener('keydown', onKey)
+    }
   }, [open])
 
   useEffect(() => {
@@ -123,7 +168,10 @@ export default function Header() {
               to="/platform"
               className={({ isActive }) =>
                 `inline-flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium transition ${
-                  isActive || location.pathname.startsWith('/platform/') || modulesOpen
+                  isActive ||
+                  location.pathname.startsWith('/platform/') ||
+                  location.pathname.startsWith('/features/') ||
+                  modulesOpen
                     ? 'bg-brand-soft text-brand'
                     : 'text-slate-600 hover:bg-surface hover:text-brand'
                 }`
@@ -131,17 +179,27 @@ export default function Header() {
               aria-expanded={modulesOpen}
               aria-haspopup="true"
             >
-              Platform
+              Inventory
               <ChevronDown
                 className={`size-4 transition-transform duration-200 ${modulesOpen ? 'rotate-180' : ''}`}
               />
             </NavLink>
             {modulesOpen ? (
               <div className="nav-platform-panel">
-                <div className="menu-pop" role="menu" aria-label="Platform modules">
+                <div className="menu-pop" role="menu" aria-label="Inventory modules">
                 <div className="menu-pop-grid">
-                  {platformColumns.map((column) => (
+                  {platformColumns.map((column, columnIndex) => (
                     <div key={column[0]} className="min-w-0 space-y-0.5">
+                      {columnIndex < platformFeatureLinks.length ? (
+                        <Link
+                          to={platformFeatureLinks[columnIndex].to}
+                          className="menu-pop-link"
+                          role="menuitem"
+                        >
+                          <IconBadge icon={platformFeatureLinks[columnIndex].icon} size="sm" />
+                          <span>{platformFeatureLinks[columnIndex].label}</span>
+                        </Link>
+                      ) : null}
                       {column.map((slug) => {
                         const module = modules.find((item) => item.slug === slug)
                         if (!module) return null
@@ -176,7 +234,7 @@ export default function Header() {
               '/industries': 'Industry Focus',
               '/why': 'Why Cloud Billing Manager?',
               '/about': 'About Cloud Billing Manager',
-              '/resources': 'Guides, checklist and glossary',
+              '/pricing': 'Plans from £59 / month',
               '/blog': 'Inventory, billing and POS guides',
               '/contact': 'Contact Us',
             }
@@ -187,8 +245,7 @@ export default function Header() {
               className={({ isActive }) =>
                 `tip tip-down rounded-lg px-2.5 py-2 text-sm font-medium transition ${
                   isActive ||
-                  (link.to === '/blog' && location.pathname.startsWith('/blog/')) ||
-                  (link.to === '/resources' && location.pathname.startsWith('/resources'))
+                  (link.to === '/blog' && location.pathname.startsWith('/blog/'))
                     ? 'bg-brand-soft text-brand'
                     : 'text-slate-600 hover:bg-surface hover:text-brand'
                 }`
@@ -249,18 +306,24 @@ export default function Header() {
                       <NavLink
                         to="/platform"
                         className={({ isActive }) =>
-                          `burger-link min-w-0 flex-1${isActive || location.pathname.startsWith('/platform/') ? ' is-active' : ''}`
+                          `burger-link min-w-0 flex-1${
+                            isActive ||
+                            location.pathname.startsWith('/platform/') ||
+                            location.pathname.startsWith('/features/')
+                              ? ' is-active'
+                              : ''
+                          }`
                         }
                       >
                         <span className="burger-ico">
                           <LayoutGrid className="size-4" />
                         </span>
-                        Platform
+                        Inventory
                       </NavLink>
                       <button
                         type="button"
                         className="burger-chevron"
-                        aria-label="Toggle platform modules"
+                        aria-label="Toggle inventory modules"
                         aria-expanded={mobileModules}
                         onClick={() => setMobileModules((value) => !value)}
                       >
@@ -269,6 +332,14 @@ export default function Header() {
                     </div>
                     {mobileModules ? (
                       <div className="burger-mods">
+                        <Link to={featurePaths.whatsappOrdering} className="burger-mod">
+                          <IconBadge icon={MessageSquare} size="sm" />
+                          AI WhatsApp Ordering
+                        </Link>
+                        <Link to={featurePaths.fleetLogistics} className="burger-mod">
+                          <IconBadge icon={Truck} size="sm" />
+                          Fleet & Logistics
+                        </Link>
                         {modules.map((module) => (
                           <Link key={module.slug} to={`/platform/${module.slug}`} className="burger-mod">
                             <IconBadge icon={moduleIcons[module.slug]} size="sm" />
@@ -311,15 +382,13 @@ export default function Header() {
                     About
                   </NavLink>
                   <NavLink
-                    to="/resources"
-                    className={({ isActive }) =>
-                      `burger-link${isActive || location.pathname.startsWith('/resources') ? ' is-active' : ''}`
-                    }
+                    to="/pricing"
+                    className={({ isActive }) => `burger-link${isActive ? ' is-active' : ''}`}
                   >
                     <span className="burger-ico">
-                      <BookOpen className="size-4" />
+                      <PoundSterling className="size-4" />
                     </span>
-                    Resources
+                    Pricing
                   </NavLink>
                   <NavLink
                     to="/blog"

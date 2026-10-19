@@ -12,7 +12,9 @@ export const staticPublicPaths = [
   '/contact',
   '/demo',
   '/blog',
-  '/resources',
+  '/pricing',
+  '/features/ai-whatsapp-ordering',
+  '/features/fleet-logistics',
   '/resources/inventory-management-checklist',
   '/resources/inventory-management-guide',
   '/resources/inventory-software-vs-spreadsheets',
@@ -47,7 +49,9 @@ const priorityByPath: Record<string, { changefreq: SitemapEntry['changefreq']; p
   '/contact': { changefreq: 'monthly', priority: '0.8' },
   '/demo': { changefreq: 'monthly', priority: '0.9' },
   '/blog': { changefreq: 'weekly', priority: '0.8' },
-  '/resources': { changefreq: 'monthly', priority: '0.8' },
+  '/pricing': { changefreq: 'weekly', priority: '0.9' },
+  '/features/ai-whatsapp-ordering': { changefreq: 'weekly', priority: '0.9' },
+  '/features/fleet-logistics': { changefreq: 'weekly', priority: '0.9' },
   '/resources/inventory-management-checklist': { changefreq: 'monthly', priority: '0.85' },
   '/resources/inventory-management-guide': { changefreq: 'monthly', priority: '0.85' },
   '/resources/inventory-software-vs-spreadsheets': { changefreq: 'monthly', priority: '0.8' },
@@ -108,7 +112,9 @@ export function buildSitemapCoreXml(lastmod = new Date().toISOString().slice(0, 
         path === '/contact' ||
         path === '/demo' ||
         path === '/blog' ||
-        path === '/resources' ||
+        path === '/pricing' ||
+        path === '/features/ai-whatsapp-ordering' ||
+        path === '/features/fleet-logistics' ||
         path === '/press' ||
         path === '/privacy' ||
         path === '/terms',
@@ -230,6 +236,18 @@ export function buildSitemapXml(lastmod = new Date().toISOString().slice(0, 10))
       {
         loc: `${siteUrl}/images/og/cloudbillingmanager-og.jpg`,
         title: 'Cloud Billing Manager blog',
+      },
+    ],
+    '/pricing': [
+      {
+        loc: `${siteUrl}/images/og/cloudbillingmanager-og.jpg`,
+        title: 'Cloud Billing Manager pricing plans',
+      },
+    ],
+    '/why': [
+      {
+        loc: `${siteUrl}/images/og/cloudbillingmanager-og.jpg`,
+        title: 'Why Cloud Billing Manager',
       },
     ],
   }

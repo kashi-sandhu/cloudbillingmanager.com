@@ -24,6 +24,16 @@ export const brandLogo: MediaAsset = {
   indexable: true,
 }
 
+/** Square mark for Google Search favicon / Organization schema. */
+export const brandIcon: MediaAsset = {
+  src: '/images/brand/cloudbillingmanager-icon.png',
+  alt: 'Cloud Billing Manager icon',
+  width: 512,
+  height: 512,
+  purpose: 'brand',
+  indexable: true,
+}
+
 export const defaultSocialImage = '/images/og/cloudbillingmanager-og.jpg'
 
 export const salesInvoiceScreenshot: MediaAsset = {
@@ -52,6 +62,7 @@ export const posWorkstationScreenshot: MediaAsset = {
 /** Meaningful images eligible for image sitemap entries (public product/brand assets only). */
 export const indexableImages: MediaAsset[] = [
   brandLogo,
+  brandIcon,
   salesInvoiceScreenshot,
   posWorkstationScreenshot,
   {

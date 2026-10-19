@@ -59,8 +59,10 @@
     <link rel="sitemap" type="text/plain" title="Sitemap (plain text)" href="https://cloudbillingmanager.com/sitemap-pages.txt" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://cloudbillingmanager.com/sitemap-pages.xml" />
     <link rel="sitemap" type="application/xml" title="Sitemap (with images)" href="https://cloudbillingmanager.com/sitemap.xml" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="shortcut icon" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="search" href="https://cloudbillingmanager.com/opensearch.xml" type="application/opensearchdescription+xml" title="Cloud Billing Manager" />
     <link rel="terms-of-service" href="https://cloudbillingmanager.com/terms" title="Terms of use" />
@@ -109,7 +111,9 @@
         "url": "https://www.avantcoretech.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://cloudbillingmanager.com/images/brand/cloudbillingmanager-logo.png"
+          "url": "https://cloudbillingmanager.com/images/brand/cloudbillingmanager-icon.png",
+          "width": 512,
+          "height": 512
         },
         "email": "sophia@cloudbillingmanager.com",
         "brand": {
@@ -234,14 +238,21 @@
     <link
       rel="preload"
       as="image"
-      href="/banners/home-overview-1280w.webp"
+      href="/banners/hero-dashboard.webp"
       type="image/webp"
-      imagesrcset="/banners/home-overview-640w.webp 640w, /banners/home-overview-960w.webp 960w, /banners/home-overview-1280w.webp 1280w"
-      imagesizes="100vw"
       fetchpriority="high"
     />
   </head>
   <body>
+    <script>
+      /* Strip trailing slash before React boots (Cloudflare often adds /). */
+      (function () {
+        var path = location.pathname
+        if (path.length > 1 && path.charAt(path.length - 1) === '/') {
+          history.replaceState(null, '', path.replace(/\/+$/, '') + location.search + location.hash)
+        }
+      })()
+    </script>
     <noscript>
       <div style="padding: 1rem; font-family: system-ui, sans-serif">
         <h1>Cloud Billing Manager — Cloud Billing Software for UK Food Distribution</h1>

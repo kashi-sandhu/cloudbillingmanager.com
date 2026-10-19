@@ -111,8 +111,8 @@ export default function InventoryManagementGuide() {
           <FaqSection faqs={staticPageSeo['/resources/inventory-management-guide']?.faqs ?? []} />
 
           <div className="mt-8">
-            <Button to="/resources" variant="outline" className="w-full sm:w-auto">
-              Back to resources
+            <Button to="/blog" variant="outline" className="w-full sm:w-auto">
+              Back to blog
             </Button>
           </div>
         </div>

@@ -1,66 +1,73 @@
 import { useEffect, useState } from 'react'
-import { Package, Ship, ShoppingBasket, ShoppingCart, Store, Truck } from 'lucide-react'
 import Button from './Button.tsx'
+import AudienceMarquee from './AudienceMarquee.tsx'
 import BannerMedia from './BannerMedia.tsx'
-import DashboardPreview from './DashboardPreview.tsx'
-import { audiences, company } from '../../data/content.ts'
 import { homePageSeo } from '../../data/pageSeo.ts'
 import { homeSlideBanners, homeSlideSrcSet } from '../../data/banners.ts'
 
-const audienceIcons = {
-  'Food Distributors': Truck,
-  Wholesalers: Store,
-  'Cash & Carry': ShoppingBasket,
-  'Retail Chains': ShoppingCart,
-  Importers: Ship,
-  'FMCG Businesses': Package,
-} as const
+type Slide = {
+  title: string
+  text: string
+  cta: string
+  to: string
+  tab: string
+  imageKey: keyof typeof homeSlideBanners
+  fit?: 'cover' | 'contain' | 'cover-right'
+}
 
-const slides = [
+const slides: Slide[] = [
   {
-    kicker: company.clientDemonstration,
-    title: company.headline,
-    text: 'Manage inventory, billing, invoicing, sales, purchases and POS from one cloud platform for UK food distributors.',
-    cta: 'Book a client demo',
-    to: '/demo',
-    tab: 'Overview',
-    imageKey: 'overview' as const,
-  },
-  {
-    kicker: 'Powerful Dashboard Features',
-    title: 'One Dashboard. Complete Business Visibility.',
-    text: 'Sales Overview, Purchase Overview, Payment Collection Overview, Inventory & Warehouse Overview.',
+    title: 'See Everything. Decide Faster.',
+    text: 'Track sales, purchases, collections and warehouse stock in one live operating view.',
     cta: 'Open Dashboard',
     to: '/platform/dashboard',
     tab: 'Dashboard',
-    imageKey: 'dashboard' as const,
+    imageKey: 'dashboard',
+    fit: 'cover-right',
   },
   {
-    kicker: 'unique selling point (USP)',
-    title: 'Intelligent Customer Pricing Engine',
-    text: 'Automatic Customer-Specific Pricing, Smart Price Learning, Order History Price Recall.',
+    title: 'Price Smarter. Protect Every Margin.',
+    text: 'Apply customer-specific rates, recall last prices and keep margins protected automatically.',
     cta: 'View Pricing Engine',
     to: '/platform/pricing-engine',
     tab: 'Pricing',
-    imageKey: 'pricing' as const,
+    imageKey: 'pricing',
+    fit: 'cover-right',
   },
   {
-    kicker: 'Point of Sale (POS)',
-    title: 'Fast, Smart & Touch-Friendly Retail Billing',
-    text: 'Walk-In (Cash) Customer Billing, DayPass Customer Sales, Credit Customer Billing.',
+    title: 'Serve Faster. Bill Without Friction.',
+    text: 'Handle walk-in, DayPass and credit customers with a touch-friendly POS workflow.',
     cta: 'View Point of Sale',
     to: '/platform/pos',
     tab: 'POS',
-    imageKey: 'pos' as const,
+    imageKey: 'pos',
+    fit: 'cover-right',
   },
   {
-    kicker: 'Our Solution',
-    title: 'One Complete Cloud Platform',
-    text: 'Everything is managed inside one system.',
-    cta: 'Explore the platform',
-    to: '/platform',
-    tab: 'Platform',
-    imageKey: 'platform' as const,
+    title: 'Inventory Control. Stock You Can Trust.',
+    text: 'Track warehouse stock in real time — levels, movements and availability in one clear inventory view.',
+    cta: 'Explore Inventory',
+    to: '/platform/inventory',
+    tab: 'Inventory',
+    imageKey: 'platform',
+  },
+  {
+    title: 'WhatsApp Orders. Invoice-Ready Drafts.',
+    text: 'AI reads WhatsApp orders, matches products, then prepares drafts for staff review.',
+    cta: 'Explore AI Ordering',
+    to: '/features/ai-whatsapp-ordering',
+    tab: 'AI Orders',
+    imageKey: 'orders',
+    fit: 'cover-right',
+  },
+  {
+    title: 'Plan Routes. Dispatch with Confidence.',
+    text: 'Auto-assign deliveries, manage capacity and keep every route linked to driver and vehicle.',
+    cta: 'Explore Fleet',
+    to: '/features/fleet-logistics',
+    tab: 'Fleet',
+    imageKey: 'fleet',
+    fit: 'cover-right',
   },
 ]
 
@@ -68,98 +75,90 @@ export default function HeroBanner() {
   const [index, setIndex] = useState(0)
   const slide = slides[index]
   const image = homeSlideBanners[slide.imageKey]
+  const secondaryIsDemo = slide.to !== '/demo'
+  const fitClass = [
+    slide.fit === 'contain' ? 'is-contain' : '',
+    slide.fit === 'cover-right' ? 'is-cover-right' : '',
+    slide.imageKey === 'pricing' ? 'is-pricing' : '',
+  ]
+    .filter(Boolean)
+    .map((c) => ` ${c}`)
+    .join('')
+  const mediaClass =
+    slide.fit === 'contain' ? 'banner-fit-contain' : slide.fit === 'cover-right' ? 'banner-cover-right' : ''
 
   useEffect(() => {
+    if (window.matchMedia('(max-width: 767px)').matches) return
     const timer = window.setInterval(() => {
       setIndex((value) => (value + 1) % slides.length)
-    }, 8000)
+    }, 8500)
     return () => window.clearInterval(timer)
-  }, [index])
+  }, [])
 
   return (
-    <section className="hero-wash relative text-white">
-      <BannerMedia
-        key={image}
-        src={image}
-        srcSet={homeSlideSrcSet(slide.imageKey)}
-        sizes="100vw"
-        priority={index === 0}
-      />
-      <h1 className="sr-only">{homePageSeo.h1 ?? company.headline}</h1>
-      <div className="container-page grid items-stretch gap-8 py-10 sm:py-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:py-16">
-        <div className="flex flex-col justify-center">
-          <p className="text-[11px] font-medium tracking-[0.16em] text-white/55 uppercase sm:tracking-[0.2em]">
-            {company.presentedBy}
-          </p>
+    <>
+      <section className={`hero-stage relative text-white${fitClass}`}>
+        <BannerMedia
+          key={image}
+          src={image}
+          srcSet={homeSlideSrcSet(slide.imageKey)}
+          sizes="100vw"
+          priority={index === 0}
+          className={mediaClass}
+        />
+        <div className="hero-stage-wash" aria-hidden />
+        <div className="hero-stage-beam" aria-hidden />
 
-          <div key={index} className="banner-copy mt-4 sm:mt-5 lg:min-h-[168px]">
-            <p className="text-xs font-semibold tracking-[0.16em] text-accent uppercase">
-              {slide.kicker}
-            </p>
-            <h2 className="mt-3 max-w-xl text-[1.7rem] leading-tight font-semibold tracking-tight sm:text-[34px] md:text-[42px]">
-              {slide.title}
-            </h2>
-            <p className="mt-4 max-w-lg text-[15px] leading-7 text-white/75">{slide.text}</p>
-          </div>
+        <h1 className="sr-only">{homePageSeo.h1}</h1>
 
-          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
-            <Button to={slide.to} size="lg" className="w-full sm:w-auto">
-              {slide.cta}
-            </Button>
-            <Button to="/platform" variant="line" size="lg" className="w-full sm:w-auto">
-              Explore the platform
-            </Button>
-          </div>
-
-          <div className="mt-7 flex flex-wrap gap-2 sm:mt-8">
-            {slides.map((item, slideIndex) => (
-              <button
-                key={item.tab}
-                type="button"
-                onClick={() => setIndex(slideIndex)}
-                className={`rounded-md px-3 py-1.5 text-xs font-medium transition ${
-                  slideIndex === index
-                    ? 'bg-white text-brand-navy'
-                    : 'bg-white/10 text-white/70 hover:bg-white/16 hover:text-white'
-                }`}
-              >
-                {item.tab}
-              </button>
-            ))}
-          </div>
-          <div className="mt-4 h-px max-w-md overflow-hidden bg-white/15">
-            <div key={index} className="banner-progress" />
-          </div>
-        </div>
-
-        <div className="hidden h-[440px] overflow-hidden rounded-2xl border border-white/15 bg-white shadow-[0_24px_50px_-24px_rgba(0,0,0,0.55)] md:block lg:h-[580px]">
-          <DashboardPreview />
-        </div>
-      </div>
-
-      <div className="audience-marquee" aria-label="Designed specifically for">
-        <div className="audience-track">
-          {[0, 1].map((copy) => (
-            <div
-              key={copy}
-              className="audience-group"
-              aria-hidden={copy === 1 ? true : undefined}
-            >
-              {Array.from({ length: 4 }, () => audiences)
-                .flat()
-                .map((item, index) => {
-                  const Icon = audienceIcons[item]
-                  return (
-                    <span key={`${copy}-${item}-${index}`} className="audience-item">
-                      <Icon className="size-3.5" strokeWidth={2.25} />
-                      {item}
-                    </span>
-                  )
-                })}
+        <div className="hero-stage-layout">
+          <div className="hero-copy-col">
+            <div key={index} className="banner-copy hero-story">
+              <h2 className="hero-title">{slide.title}</h2>
+              <p className="hero-lead">{slide.text}</p>
             </div>
-          ))}
+
+            <div className="hero-cta-row">
+              <Button to={slide.to} size="lg" className="w-full sm:w-auto" analytics="cta_click_hero_primary">
+                {slide.cta}
+              </Button>
+              <Button
+                to={secondaryIsDemo ? '/demo' : '/platform/inventory'}
+                variant="line"
+                size="lg"
+                className="w-full sm:w-auto"
+                analytics="cta_click_hero_secondary"
+              >
+                {secondaryIsDemo ? 'Book a client demo' : 'Explore Inventory'}
+              </Button>
+            </div>
+          </div>
+
+          <nav className="hero-film" aria-label="Product views">
+            <div className="hero-film-track">
+              {slides.map((item, slideIndex) => {
+                const active = slideIndex === index
+                return (
+                  <button
+                    key={item.tab}
+                    type="button"
+                    aria-current={active ? 'true' : undefined}
+                    onClick={() => setIndex(slideIndex)}
+                    className={`hero-film-item${active ? ' is-active' : ''}`}
+                  >
+                    {item.tab}
+                  </button>
+                )
+              })}
+            </div>
+            <div className="hero-film-meter" aria-hidden>
+              <i key={index} />
+            </div>
+          </nav>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <AudienceMarquee />
+    </>
   )
 }

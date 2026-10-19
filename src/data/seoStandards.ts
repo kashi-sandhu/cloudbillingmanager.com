@@ -125,5 +125,6 @@ export function getPageTwitterContext(pathname: string): { label: string; value:
   if (pathname.startsWith('/industries/')) return { label: 'Industry', value: 'Food distribution UK' }
   if (pathname.startsWith('/blog/')) return { label: 'Content', value: 'Expert guides' }
   if (pathname.startsWith('/resources')) return { label: 'Resource', value: 'Free guides' }
+  if (pathname === '/pricing') return { label: 'Pricing', value: 'Monthly GBP plans' }
   return { label: 'Website', value: SEO_DOMAIN }
 }

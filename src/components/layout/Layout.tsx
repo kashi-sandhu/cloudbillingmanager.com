@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import ScrollToTop from './ScrollToTop.tsx'
@@ -7,6 +7,11 @@ import Seo from '../seo/Seo.tsx'
 import Analytics from '../seo/Analytics.tsx'
 import Chatbot from '../chat/Chatbot.tsx'
 import { trackEvent } from '../../lib/analytics.ts'
+
+function PageFallback() {
+  // Quiet placeholder — keeps header/footer visible, no "Loading…" flash
+  return <div className="min-h-[50vh]" aria-busy="true" aria-hidden />
+}
 
 export default function Layout() {
   const { pathname } = useLocation()
@@ -33,7 +38,9 @@ export default function Layout() {
       </a>
       <Header />
       <main id="main" className="flex-1">
-        <Outlet />
+        <Suspense fallback={<PageFallback />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <Chatbot />

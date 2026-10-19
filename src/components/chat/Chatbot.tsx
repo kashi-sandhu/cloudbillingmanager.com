@@ -14,12 +14,14 @@ type Message = {
   suggestions?: string[]
 }
 
+const starterChips = chatStarters.slice(0, 3)
+
 const welcome: Message = {
   id: 0,
   role: 'bot',
   text: `Hello. I am the Cloud Billing Manager assistant from ${company.presenter}. Ask about the company, any module, or pick a suggested question below.`,
   path: '/',
-  suggestions: [...chatStarters],
+  suggestions: [...starterChips],
 }
 
 function MessageText({ text }: { text: string }) {
@@ -157,11 +159,17 @@ export default function Chatbot() {
 
           <div className="chat-chips">
             <p className="chat-chip-label">Suggested questions</p>
-            {(messages.filter((item) => item.role === 'bot').at(-1)?.suggestions ?? chatStarters).map((item) => (
-              <button key={item} type="button" className="chat-chip" disabled={pending} onClick={() => ask(item)}>
-                {item}
-              </button>
-            ))}
+            <div className="chat-chip-row">
+              {(
+                messages.filter((item) => item.role === 'bot').at(-1)?.suggestions ?? starterChips
+              )
+                .slice(0, 3)
+                .map((item) => (
+                  <button key={item} type="button" className="chat-chip" disabled={pending} onClick={() => ask(item)}>
+                    {item}
+                  </button>
+                ))}
+            </div>
           </div>
 
           <form className="chat-form" onSubmit={onSubmit}>

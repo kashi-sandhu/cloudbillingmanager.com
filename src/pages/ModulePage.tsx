@@ -4,12 +4,11 @@ import Button from '../components/ui/Button.tsx'
 import FaqSection from '../components/ui/FaqSection.tsx'
 import IconBadge from '../components/ui/IconBadge.tsx'
 import PageHero from '../components/ui/PageHero.tsx'
-import SeoImage from '../components/ui/SeoImage.tsx'
 import { modules } from '../data/content.ts'
 import { getModulePageSeo } from '../data/pageSeo.ts'
-import { salesInvoiceScreenshot, posWorkstationScreenshot } from '../data/media.ts'
 import { getLearningLinks } from '../data/semantic.ts'
 import { moduleIcons } from '../data/icons.ts'
+import ModuleWorkVisual, { hasModuleWorkVisual } from '../components/features/ModuleWorkVisual.tsx'
 
 export default function ModulePage() {
   const { slug } = useParams()
@@ -44,42 +43,19 @@ export default function ModulePage() {
             <p className="max-w-3xl text-base leading-7 text-slate-600">{pageSeo.intro}</p>
           ) : null}
 
-          {module.slug === 'sales' ? (
-            <figure className="ui-card overflow-hidden p-3 sm:p-5">
-              <SeoImage
-                src={salesInvoiceScreenshot.src}
-                fallbackSrc={salesInvoiceScreenshot.fallback}
-                alt={salesInvoiceScreenshot.alt}
-                width={salesInvoiceScreenshot.width}
-                height={salesInvoiceScreenshot.height}
-                className="mx-auto max-h-[520px] w-full rounded-xl border border-line bg-white object-contain"
-                sizes="(max-width: 768px) 100vw, 720px"
-              />
-              {salesInvoiceScreenshot.caption ? (
-                <figcaption className="mt-3 text-center text-sm leading-6 text-muted">
-                  {salesInvoiceScreenshot.caption}
+          {hasModuleWorkVisual(module.slug) ? (
+            <figure className="module-work-stage">
+              <ModuleWorkVisual slug={module.slug} />
+              {module.slug === 'pos' ? (
+                <figcaption className="mt-4 text-center text-sm leading-6 text-slate-600 sm:px-4">
+                  Touch-friendly POS billing with product categories, barcode scanning and printed
+                  invoice — designed for cash &amp; carry and retail counters.
                 </figcaption>
               ) : null}
-            </figure>
-          ) : null}
-
-          {module.slug === 'pos' ? (
-            <figure className="module-showcase ui-card overflow-hidden p-3 sm:p-5">
-              <div className="module-showcase-frame">
-                <SeoImage
-                  src={posWorkstationScreenshot.src}
-                  fallbackSrc={posWorkstationScreenshot.fallback}
-                  alt={posWorkstationScreenshot.alt}
-                  width={posWorkstationScreenshot.width}
-                  height={posWorkstationScreenshot.height}
-                  className="module-showcase-img"
-                  sizes="(max-width: 768px) 100vw, min(960px, 90vw)"
-                  priority
-                />
-              </div>
-              {posWorkstationScreenshot.caption ? (
+              {module.slug === 'sales' ? (
                 <figcaption className="mt-4 text-center text-sm leading-6 text-slate-600 sm:px-4">
-                  {posWorkstationScreenshot.caption}
+                  Cloud Billing Manager sales invoice view used for customer billing and order
+                  documentation.
                 </figcaption>
               ) : null}
             </figure>

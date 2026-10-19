@@ -17,10 +17,15 @@ export const seoPreconnectLinks: readonly SeoLinkTag[] = [
   { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
 ]
 
-/** Favicon, manifest — visible in every page source. */
+/** Favicon, manifest — Cloud Billing Manager logo (square PNGs for Google Search). */
 export const seoAssetLinks: readonly SeoLinkTag[] = [
-  { rel: 'icon', href: `${siteUrl}/logo.png`, type: 'image/png' },
-  { rel: 'apple-touch-icon', href: `${siteUrl}/logo.png`, title: 'Cloud Billing Manager' },
+  { rel: 'icon', href: `${siteUrl}/favicon-48.png`, type: 'image/png', title: '48x48' },
+  { rel: 'icon', href: `${siteUrl}/favicon-192.png`, type: 'image/png', title: '192x192' },
+  {
+    rel: 'apple-touch-icon',
+    href: `${siteUrl}/apple-touch-icon.png`,
+    title: 'Cloud Billing Manager',
+  },
   { rel: 'manifest', href: `${siteUrl}/manifest.webmanifest`, title: 'Web app manifest' },
 ]
 
@@ -45,8 +50,13 @@ export const seoEntityLinks: readonly SeoLinkTag[] = [
   },
   {
     rel: 'me',
-    href: 'https://www.facebook.com/share/1D8UoyVNHh/',
-    title: 'AVANTCORE on Facebook',
+    href: 'https://www.facebook.com/cloudbillingmanager',
+    title: 'Cloud Billing Manager on Facebook',
+  },
+  {
+    rel: 'me',
+    href: 'https://www.instagram.com/cloudbillingmanager/',
+    title: 'Cloud Billing Manager on Instagram',
   },
   {
     rel: 'alternate',
@@ -55,8 +65,13 @@ export const seoEntityLinks: readonly SeoLinkTag[] = [
   },
   {
     rel: 'alternate',
-    href: 'https://www.facebook.com/share/1D8UoyVNHh/',
-    title: 'AVANTCORE on Facebook',
+    href: 'https://www.facebook.com/cloudbillingmanager',
+    title: 'Cloud Billing Manager on Facebook',
+  },
+  {
+    rel: 'alternate',
+    href: 'https://www.instagram.com/cloudbillingmanager/',
+    title: 'Cloud Billing Manager on Instagram',
   },
 ]
 

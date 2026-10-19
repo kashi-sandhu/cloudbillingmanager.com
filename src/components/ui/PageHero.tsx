@@ -14,9 +14,9 @@ export default function PageHero({ eyebrow, title, text }: Props) {
   const banner = bannerForPath(pathname)
 
   return (
-    <section className="page-hero relative py-10 text-white sm:py-12 md:py-14" aria-label={title}>
+    <section className="page-hero relative text-white" aria-label={title}>
       <BannerMedia src={banner} sizes="100vw" priority />
-      <div className="container-page relative">
+      <div className="container-page relative z-[2]">
         <p className="text-xs font-semibold tracking-[0.16em] text-accent uppercase">{eyebrow}</p>
         <h1 className="mt-3 max-w-3xl text-[1.65rem] leading-tight font-semibold tracking-tight sm:text-3xl md:text-4xl">
           {title}

@@ -29,8 +29,8 @@ export default function Contact() {
                 Schedule a client demonstration
               </Link>
               {' · '}
-              <Link to="/resources" className="font-semibold text-brand">
-                Browse resources
+              <Link to="/pricing" className="font-semibold text-brand">
+                View pricing
               </Link>
               .
             </p>

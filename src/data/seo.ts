@@ -156,6 +156,7 @@ export function buildBreadcrumbItems(pathname: string): BreadcrumbItem[] {
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       resources: 'Resources',
+      pricing: 'Pricing',
       press: 'Press',
       'inventory-management-checklist': 'Inventory checklist',
       'inventory-management-guide': 'Inventory guide',

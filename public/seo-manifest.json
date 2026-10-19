@@ -1,9 +1,9 @@
 {
   "site": "https://cloudbillingmanager.com",
   "domain": "cloudbillingmanager.com",
-  "pageCount": 51,
+  "pageCount": 53,
   "sitemapIndex": "https://cloudbillingmanager.com/sitemap-index.xml",
-  "generated": "2026-09-07",
+  "generated": "2026-10-19",
   "pages": [
     {
       "path": "/",
@@ -17,294 +17,308 @@
       "url": "https://cloudbillingmanager.com/about",
       "title": "About Cloud Billing Manager | cloudbillingmanager.com",
       "description": "About Cloud Billing Manager — official cloud ERP for UK food distributors by AVANTCORE Technologies. Inventory, billing, invoicing and POS at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/about.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/about.jpg"
     },
     {
       "path": "/platform",
       "url": "https://cloudbillingmanager.com/platform",
       "title": "ERP Platform | Inventory, Billing & POS | Cloud Billing Manager",
       "description": "Explore 13 integrated Cloud Billing Manager modules for UK food distribution — inventory, billing, sales, POS, purchasing and accounting. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/platform.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform.jpg"
     },
     {
       "path": "/industries",
       "url": "https://cloudbillingmanager.com/industries",
       "title": "Food Distribution ERP by Industry | Cloud Billing Manager",
       "description": "Industry-specific cloud ERP for frozen foods, fresh foods, meat, beverage, grocery, FMCG, restaurant supply, wholesale and import distribution in the UK.",
-      "ogImage": "https://cloudbillingmanager.com/banners/industries.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries.jpg"
     },
     {
       "path": "/why",
       "url": "https://cloudbillingmanager.com/why",
       "title": "Why Cloud Billing Manager | One Platform. Complete Control.",
       "description": "Replace Sage, Excel and disconnected systems. Cloud Billing Manager unifies inventory, billing, sales, POS and accounting for UK food distributors. Book a…",
-      "ogImage": "https://cloudbillingmanager.com/banners/why.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/why.jpg"
     },
     {
       "path": "/contact",
       "url": "https://cloudbillingmanager.com/contact",
       "title": "Contact Cloud Billing Manager | AVANTCORE Technologies",
       "description": "Contact Cloud Billing Manager — email sophia@cloudbillingmanager.com or call 020 8080 5153. AVANTCORE Technologies, London. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/contact.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/contact.jpg"
     },
     {
       "path": "/demo",
       "url": "https://cloudbillingmanager.com/demo",
       "title": "Book a Client Demo | Cloud Billing Manager — cloudbillingmanager.com",
       "description": "Schedule a personalised Cloud Billing Manager demo. See inventory, invoicing, POS and VAT workflows live — built for UK food distributors.",
-      "ogImage": "https://cloudbillingmanager.com/banners/demo.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/demo.jpg"
     },
     {
       "path": "/blog",
       "url": "https://cloudbillingmanager.com/blog",
       "title": "Blog | Inventory, Billing & POS Guides | Cloud Billing Manager",
       "description": "Read practical guides on inventory management, billing software, invoicing, POS systems and stock control for UK food distribution businesses. Official guides…",
-      "ogImage": "https://cloudbillingmanager.com/banners/blog.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/blog.jpg"
     },
     {
-      "path": "/resources",
-      "url": "https://cloudbillingmanager.com/resources",
-      "title": "Resources | Inventory Checklists & Guides | Cloud Billing Manager",
-      "description": "Free linkable resources for distributors and publishers: inventory guide, checklist, glossary and spreadsheet comparison for food distribution businesses.…",
-      "ogImage": "https://cloudbillingmanager.com/banners/resources.jpg"
+      "path": "/pricing",
+      "url": "https://cloudbillingmanager.com/pricing",
+      "title": "Pricing | Cloud Billing Manager Plans from £59",
+      "description": "Cloud Billing Manager pricing for UK food distributors — Starter £59, Business £99 and Advanced £199 per month. Choose users, invoices and ERP features that…",
+      "ogImage": "https://cloudbillingmanager.com/webp/pricing.jpg"
+    },
+    {
+      "path": "/features/ai-whatsapp-ordering",
+      "url": "https://cloudbillingmanager.com/features/ai-whatsapp-ordering",
+      "title": "AI WhatsApp Ordering | Turn Messages into Invoice Drafts",
+      "description": "AI-powered WhatsApp order management for Cloud Billing Manager. Convert customer WhatsApp orders into review-ready sales invoice drafts with customer…",
+      "ogImage": "https://cloudbillingmanager.com/webp/features--ai-whatsapp-ordering.jpg"
+    },
+    {
+      "path": "/features/fleet-logistics",
+      "url": "https://cloudbillingmanager.com/features/fleet-logistics",
+      "title": "Fleet & Logistics | Route Planning & Auto Assignment",
+      "description": "Smart fleet management in Cloud Billing Manager — drivers, vehicles, delivery routes, automatic delivery assignment, capacity-aware planning, live monitoring…",
+      "ogImage": "https://cloudbillingmanager.com/webp/features--fleet-logistics.jpg"
     },
     {
       "path": "/resources/inventory-management-checklist",
       "url": "https://cloudbillingmanager.com/resources/inventory-management-checklist",
       "title": "Inventory Checklist for Food Distributors | Cloud Billing Manager",
       "description": "Free operational checklist covering product masters, warehouses, purchasing, sales, POS, returns, low stock and inventory reporting for UK food distributors.…",
-      "ogImage": "https://cloudbillingmanager.com/banners/resources-checklist.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/resources--inventory-management-checklist.jpg"
     },
     {
       "path": "/resources/inventory-management-guide",
       "url": "https://cloudbillingmanager.com/resources/inventory-management-guide",
       "title": "Inventory Guide for Food Distributors | Cloud Billing Manager",
       "description": "A practical inventory management hub covering stock control, warehouses, purchasing, sales, POS connections and Cloud Billing Manager inventory capabilities.…",
-      "ogImage": "https://cloudbillingmanager.com/banners/resources-guide.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/resources--inventory-management-guide.jpg"
     },
     {
       "path": "/resources/inventory-software-vs-spreadsheets",
       "url": "https://cloudbillingmanager.com/resources/inventory-software-vs-spreadsheets",
       "title": "Inventory Management Software vs Spreadsheets | Cloud Billing Manager",
       "description": "Compare spreadsheets and inventory management software for multi-user stock control, warehouses, POS updates, audit trails and reporting. Official guides from…",
-      "ogImage": "https://cloudbillingmanager.com/banners/resources-compare.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/resources--inventory-software-vs-spreadsheets.jpg"
     },
     {
       "path": "/resources/glossary",
       "url": "https://cloudbillingmanager.com/resources/glossary",
       "title": "Inventory, Billing & POS Glossary | Cloud Billing Manager",
       "description": "Definitions for SKU, inventory, purchase orders, invoices, credit notes, POS, warehouse transfers and invoice aging used in food distribution operations.…",
-      "ogImage": "https://cloudbillingmanager.com/banners/glossary.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/resources--glossary.jpg"
     },
     {
       "path": "/press",
       "url": "https://cloudbillingmanager.com/press",
       "title": "Press Kit | Cloud Billing Manager — cloudbillingmanager.com",
       "description": "Official Cloud Billing Manager press kit. Brand facts, boilerplate and media resources for cloudbillingmanager.com — AVANTCORE Technologies.",
-      "ogImage": "https://cloudbillingmanager.com/banners/press.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/press.jpg"
     },
     {
       "path": "/privacy",
       "url": "https://cloudbillingmanager.com/privacy",
       "title": "Privacy Policy | Cloud Billing Manager",
       "description": "How AVANTCORE Technologies handles enquiry and demo request information submitted through the Cloud Billing Manager website at cloudbillingmanager.com.",
-      "ogImage": "https://cloudbillingmanager.com/banners/privacy.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/privacy.jpg"
     },
     {
       "path": "/terms",
       "url": "https://cloudbillingmanager.com/terms",
       "title": "Terms of Use | Cloud Billing Manager",
       "description": "Terms for using the Cloud Billing Manager public website at cloudbillingmanager.com, operated by AVANTCORE Technologies.",
-      "ogImage": "https://cloudbillingmanager.com/banners/terms.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/terms.jpg"
     },
     {
       "path": "/platform/dashboard",
       "url": "https://cloudbillingmanager.com/platform/dashboard",
       "title": "Business Dashboard & Inventory Reports | Cloud Billing Manager",
       "description": "View sales, purchases, collections, inventory value, stock alerts and financial KPIs on the Cloud Billing Manager business dashboard. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/dashboard.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--dashboard.jpg"
     },
     {
       "path": "/platform/sales",
       "url": "https://cloudbillingmanager.com/platform/sales",
       "title": "Sales Management & Invoicing Software | Cloud Billing Manager",
       "description": "Create sales invoices, quotations, loading slips and customer-specific pricing with Cloud Billing Manager sales management and invoicing software for…",
-      "ogImage": "https://cloudbillingmanager.com/banners/sales.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--sales.jpg"
     },
     {
       "path": "/platform/pricing-engine",
       "url": "https://cloudbillingmanager.com/platform/pricing-engine",
       "title": "Customer Pricing Engine | Cloud Billing Manager",
       "description": "Apply customer-specific pricing, price learning and margin protection with the Intelligent Customer Pricing Engine in Cloud Billing Manager. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/pricing-engine.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--pricing-engine.jpg"
     },
     {
       "path": "/platform/billing",
       "url": "https://cloudbillingmanager.com/platform/billing",
       "title": "Billing Software for Businesses | Cloud Billing Manager",
       "description": "Manage customer billing, payments, credit notes, account statements and VAT with Cloud Billing Manager billing software built for UK food distribution…",
-      "ogImage": "https://cloudbillingmanager.com/banners/billing.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--billing.jpg"
     },
     {
       "path": "/platform/purchasing",
       "url": "https://cloudbillingmanager.com/platform/purchasing",
       "title": "Purchase Management Software | Cloud Billing Manager",
       "description": "Manage purchase orders, supplier pricing, goods receipt and stock updates with Cloud Billing Manager purchase management software for UK distributors. Book a…",
-      "ogImage": "https://cloudbillingmanager.com/banners/purchasing.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--purchasing.jpg"
     },
     {
       "path": "/platform/supplier-payments",
       "url": "https://cloudbillingmanager.com/platform/supplier-payments",
       "title": "Supplier Payments Software | Cloud Billing Manager",
       "description": "Record supplier invoice payments, bulk settlements and payables with Cloud Billing Manager supplier payments and financial management. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/supplier-payments.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--supplier-payments.jpg"
     },
     {
       "path": "/platform/inventory",
       "url": "https://cloudbillingmanager.com/platform/inventory",
       "title": "Inventory Management Software | Cloud Billing Manager",
       "description": "Manage products, stock levels, warehouses, adjustments and inventory reports with Cloud Billing Manager inventory management software for UK food…",
-      "ogImage": "https://cloudbillingmanager.com/banners/inventory.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--inventory.jpg"
     },
     {
       "path": "/platform/accounting",
       "url": "https://cloudbillingmanager.com/platform/accounting",
       "title": "Accounting & Financial Management Software | Cloud Billing Manager",
       "description": "Manage receivables, payables, VAT, ledgers, expenses and financial reports with Cloud Billing Manager accounting software integrated with sales and inventory.…",
-      "ogImage": "https://cloudbillingmanager.com/banners/accounting.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--accounting.jpg"
     },
     {
       "path": "/platform/hr",
       "url": "https://cloudbillingmanager.com/platform/hr",
       "title": "User & HR Management | Cloud Billing Manager",
       "description": "Manage employees, attendance, payroll, leave and role-based access control with Cloud Billing Manager user and HR management. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/hr.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--hr.jpg"
     },
     {
       "path": "/platform/customers",
       "url": "https://cloudbillingmanager.com/platform/customers",
       "title": "Customer Management Software | Cloud Billing Manager",
       "description": "Onboard customers, manage profiles, pricing, credit limits, statements and sales history with Cloud Billing Manager customer management. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/customers.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--customers.jpg"
     },
     {
       "path": "/platform/suppliers",
       "url": "https://cloudbillingmanager.com/platform/suppliers",
       "title": "Supplier Management Software | Cloud Billing Manager",
       "description": "Register suppliers, track purchase history, statements, payables and performance with Cloud Billing Manager supplier management. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/suppliers.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--suppliers.jpg"
     },
     {
       "path": "/platform/customizable",
       "url": "https://cloudbillingmanager.com/platform/customizable",
       "title": "Customizable Cloud ERP | Cloud Billing Manager",
       "description": "Customize invoice templates, imports, exports, VAT settings and secure cloud access with the fully customizable Cloud Billing Manager system. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/customizable.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--customizable.jpg"
     },
     {
       "path": "/platform/pos",
       "url": "https://cloudbillingmanager.com/platform/pos",
       "title": "POS Software & Inventory Management | Cloud Billing Manager",
       "description": "Run fast retail billing with barcode support, customer pricing and automatic inventory updates using Cloud Billing Manager POS software. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/pos.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/platform--pos.jpg"
     },
     {
       "path": "/industries/frozen-foods",
       "url": "https://cloudbillingmanager.com/industries/frozen-foods",
       "title": "Frozen Foods Distribution ERP | Cloud Billing Manager",
       "description": "Cloud Billing Manager helps UK frozen foods distributors manage inventory, warehouses, sales invoicing, purchasing, POS and billing in one cloud ERP. Book a…",
-      "ogImage": "https://cloudbillingmanager.com/banners/frozen-foods.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--frozen-foods.jpg"
     },
     {
       "path": "/industries/fresh-foods",
       "url": "https://cloudbillingmanager.com/industries/fresh-foods",
       "title": "Fresh Foods Distribution ERP | Cloud Billing Manager",
       "description": "Cloud ERP for UK fresh foods distributors: inventory management, purchasing, sales invoicing, billing and reporting in one platform. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/fresh-foods.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--fresh-foods.jpg"
     },
     {
       "path": "/industries/meat-suppliers",
       "url": "https://cloudbillingmanager.com/industries/meat-suppliers",
       "title": "Meat Supplier Distribution ERP | Cloud Billing Manager",
       "description": "Inventory, purchasing, sales invoicing, POS and billing software for UK meat suppliers and distributors. Book a demo at cloudbillingmanager.com.",
-      "ogImage": "https://cloudbillingmanager.com/banners/meat-suppliers.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--meat-suppliers.jpg"
     },
     {
       "path": "/industries/beverage-distribution",
       "url": "https://cloudbillingmanager.com/industries/beverage-distribution",
       "title": "Beverage Distribution ERP | Cloud Billing Manager",
       "description": "Cloud Billing Manager for UK beverage distributors: stock control, wholesale invoicing, POS, purchasing and customer billing. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/beverage-distribution.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--beverage-distribution.jpg"
     },
     {
       "path": "/industries/grocery-distribution",
       "url": "https://cloudbillingmanager.com/industries/grocery-distribution",
       "title": "Grocery Distribution ERP | Cloud Billing Manager",
       "description": "Inventory management, sales invoicing, purchasing, POS and billing for UK grocery distribution businesses. Book a demo at cloudbillingmanager.com.",
-      "ogImage": "https://cloudbillingmanager.com/banners/grocery-distribution.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--grocery-distribution.jpg"
     },
     {
       "path": "/industries/fmcg",
       "url": "https://cloudbillingmanager.com/industries/fmcg",
       "title": "FMCG Distribution ERP | Cloud Billing Manager",
       "description": "Cloud ERP for UK FMCG distributors covering inventory, pricing, sales invoicing, POS and billing. Book a demo at cloudbillingmanager.com.",
-      "ogImage": "https://cloudbillingmanager.com/banners/fmcg.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--fmcg.jpg"
     },
     {
       "path": "/industries/restaurant-suppliers",
       "url": "https://cloudbillingmanager.com/industries/restaurant-suppliers",
       "title": "Restaurant Supplier ERP | Cloud Billing Manager",
       "description": "Inventory, sales invoicing, purchasing and billing software for UK restaurant suppliers and foodservice distributors. Book a demo at cloudbillingmanager.com.",
-      "ogImage": "https://cloudbillingmanager.com/banners/restaurant-suppliers.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--restaurant-suppliers.jpg"
     },
     {
       "path": "/industries/wholesale-businesses",
       "url": "https://cloudbillingmanager.com/industries/wholesale-businesses",
       "title": "Wholesale Business ERP | Cloud Billing Manager",
       "description": "Cloud Billing Manager for UK wholesalers: inventory management, sales invoicing, POS, purchasing, billing and accounting. Book a demo at…",
-      "ogImage": "https://cloudbillingmanager.com/banners/wholesale-businesses.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--wholesale-businesses.jpg"
     },
     {
       "path": "/industries/import-distribution",
       "url": "https://cloudbillingmanager.com/industries/import-distribution",
       "title": "Import & Distribution ERP | Cloud Billing Manager",
       "description": "Purchasing, inventory, sales invoicing and billing software for UK import and distribution businesses. Book a demo at cloudbillingmanager.com.",
-      "ogImage": "https://cloudbillingmanager.com/banners/import-distribution.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/industries--import-distribution.jpg"
     },
     {
       "path": "/blog/category/inventory-management",
       "url": "https://cloudbillingmanager.com/blog/category/inventory-management",
       "title": "Inventory Management Guides | Cloud Billing Manager Blog",
       "description": "Read Cloud Billing Manager guides on stock control, warehouse visibility, inventory reporting and inventory management software for UK food distributors.…",
-      "ogImage": "https://cloudbillingmanager.com/banners/blog.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/blog--category--inventory-management.jpg"
     },
     {
       "path": "/blog/category/billing-invoicing",
       "url": "https://cloudbillingmanager.com/blog/category/billing-invoicing",
       "title": "Billing & Invoicing Guides | Cloud Billing Manager Blog",
       "description": "Cloud Billing Manager articles on billing software, invoicing workflows, customer payments and reducing unpaid invoices for UK distributors. Official guides…",
-      "ogImage": "https://cloudbillingmanager.com/banners/blog.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/blog--category--billing-invoicing.jpg"
     },
     {
       "path": "/blog/category/pos",
       "url": "https://cloudbillingmanager.com/blog/category/pos",
       "title": "POS Guides | Cloud Billing Manager Blog",
       "description": "Point of sale guides from Cloud Billing Manager covering retail billing, POS inventory updates and sales tracking for food distribution businesses. Official…",
-      "ogImage": "https://cloudbillingmanager.com/banners/blog.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/blog--category--pos.jpg"
     },
     {
       "path": "/blog/category/sales-purchases",
       "url": "https://cloudbillingmanager.com/blog/category/sales-purchases",
       "title": "Sales & Purchases Guides | Cloud Billing Manager Blog",
       "description": "Articles on sales management, purchase orders, suppliers and how buying and selling connect to stock — from Cloud Billing Manager. Official guides from…",
-      "ogImage": "https://cloudbillingmanager.com/banners/blog.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/blog--category--sales-purchases.jpg"
     },
     {
       "path": "/blog/category/business-management",
       "url": "https://cloudbillingmanager.com/blog/category/business-management",
       "title": "Business Management Guides | Cloud Billing Manager Blog",
       "description": "Business management guidance from Cloud Billing Manager on reporting, operations and running food distribution in one cloud ERP platform. Official guides from…",
-      "ogImage": "https://cloudbillingmanager.com/banners/blog.jpg"
+      "ogImage": "https://cloudbillingmanager.com/webp/blog--category--business-management.jpg"
     },
     {
       "path": "/blog/what-is-inventory-management",

@@ -148,6 +148,85 @@ export const staticPageSeo: Record<string, StaticPageSeo> = {
       },
     ],
   },
+  '/pricing': {
+    title: 'Pricing | Cloud Billing Manager Plans from £59',
+    description:
+      'Cloud Billing Manager pricing for UK food distributors — Starter £59, Business £99 and Advanced £199 per month. Choose users, invoices and ERP features that fit your business.',
+    h1: 'Cloud Billing Manager Pricing',
+    faqs: [
+      {
+        question: 'How much does Cloud Billing Manager cost?',
+        answer:
+          'Cloud Billing Manager plans start at £59 per month for Starter, £99 for Business and £199 for Advanced. All plans are cloud-based and billed monthly in GBP.',
+      },
+      {
+        question: 'Which plan is right for my distribution business?',
+        answer:
+          'Starter suits small teams with one user and lighter invoice volume. Business is the most popular choice for growing distributors needing logistics and advanced controls. Advanced adds unlimited users, HR, attendance, leave and payroll.',
+      },
+      {
+        question: 'Can I upgrade later?',
+        answer:
+          'Yes. Start on the plan that matches your current users and daily invoices, then move up as your warehouse, logistics or HR needs grow. Book a demo at cloudbillingmanager.com/demo to confirm the best fit.',
+      },
+    ],
+  },
+  '/features/ai-whatsapp-ordering': {
+    title: 'AI WhatsApp Ordering | Turn Messages into Invoice Drafts',
+    description:
+      'AI-powered WhatsApp order management for Cloud Billing Manager. Convert customer WhatsApp orders into review-ready sales invoice drafts with customer matching, product recognition and staff approval.',
+    h1: 'AI-Powered WhatsApp Ordering for Modern Business Operations',
+    faqs: [
+      {
+        question: 'Does AI WhatsApp ordering work with any WhatsApp number?',
+        answer:
+          'The system processes messages from WhatsApp numbers associated with existing customer records. Staff review ambiguous matches when more than one customer could share a number.',
+      },
+      {
+        question: 'Does AI automatically post every invoice?',
+        answer:
+          'No. AI prepares editable sales invoice drafts. Staff review, edit, approve or reject before posting. Stock processing and applicable WhatsApp sending occur after invoice posting.',
+      },
+      {
+        question: 'What information appears on an AI-generated invoice draft?',
+        answer:
+          'Drafts can include product code, description, quantity, price, VAT, net amount, line totals, subtotal, total VAT and grand total — all editable before posting.',
+      },
+      {
+        question: 'Is this a standalone WhatsApp chatbot?',
+        answer:
+          'No. It is an order assistant inside Cloud Billing Manager Sales that turns WhatsApp order messages into review-ready invoice drafts connected to your existing sales and delivery workflows.',
+      },
+    ],
+  },
+  '/features/fleet-logistics': {
+    title: 'Fleet & Logistics | Route Planning & Auto Assignment',
+    description:
+      'Smart fleet management in Cloud Billing Manager — drivers, vehicles, delivery routes, automatic delivery assignment, capacity-aware planning, live monitoring dashboard and delivery history.',
+    h1: 'Smarter Fleet Management. More Organized Deliveries.',
+    faqs: [
+      {
+        question: 'Does Cloud Billing Manager include fleet and logistics management?',
+        answer:
+          'Yes. The Fleet / Logistics module covers driver and vehicle management, delivery routes, automatic delivery assignment, capacity-aware planning, a live monitoring dashboard and delivery history.',
+      },
+      {
+        question: 'How does automatic delivery assignment work?',
+        answer:
+          'Auto Assign Deliveries groups nearby customers, arranges a shorter stop sequence, fits deliveries to vehicle capacity (including a default 20-stop local round limit), supports dispatch to On Trip status, and supports proof-of-delivery completion.',
+      },
+      {
+        question: 'Does live tracking mean every vehicle is always online?',
+        answer:
+          'No. The live monitoring dashboard shows fleet visibility, status filters and signal availability. Vehicles may appear without a GPS signal depending on device and map configuration.',
+      },
+      {
+        question: 'How does logistics connect to sales invoices?',
+        answer:
+          'Delivery planning uses the same pool of delivery invoices as sales workflows. Manual and automatic routing help keep assignments organised from invoice posting through dispatch and delivery history.',
+      },
+    ],
+  },
   '/resources': {
     title: 'Resources | Inventory Checklists & Guides | Cloud Billing Manager',
     description:

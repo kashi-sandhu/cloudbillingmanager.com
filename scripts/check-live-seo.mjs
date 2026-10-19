@@ -8,7 +8,11 @@ const site = 'https://cloudbillingmanager.com'
 const checks = [
   {
     path: '/robots.txt',
-    expect: (t) => t.includes('sitemap-pages.txt') && t.includes('sitemap-pages.xml'),
+    expect: (t) =>
+      t.includes('Cloud Billing Manager robots.txt') &&
+      t.includes('User-agent: *') &&
+      t.includes('Allow: /') &&
+      t.includes('Sitemap: https://cloudbillingmanager.com/sitemap-index.xml'),
   },
   { path: '/sitemap-index.xml', expect: (t) => t.includes('<sitemapindex') && t.includes('sitemap-core.xml') && t.includes('sitemap-pages.xml') },
   {

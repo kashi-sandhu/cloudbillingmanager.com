@@ -49,8 +49,8 @@ export default function Glossary() {
           </div>
 
           <div className="mt-10">
-            <Button to="/resources" variant="outline" className="w-full sm:w-auto">
-              Back to resources
+            <Button to="/blog" variant="outline" className="w-full sm:w-auto">
+              Back to blog
             </Button>
           </div>
         </div>

@@ -4,6 +4,9 @@
 #
 # Google Search Console — submit THIS first:
 #   https://cloudbillingmanager.com/sitemap-index.xml
+#
+# IMPORTANT: Do not replace this file with Cloudflare AI "content-signal"
+# templates. Those remove Sitemap lines and slow Google discovery.
 
 User-agent: *
 Allow: /
@@ -11,6 +14,9 @@ Disallow: /404
 Disallow: /404.html
 
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
@@ -37,7 +43,7 @@ Allow: /
 # Primary — submit in Google Search Console
 Sitemap: https://cloudbillingmanager.com/sitemap-index.xml
 
-# Full + section sitemaps (also listed inside sitemap-index.xml)
+# Full + section sitemaps
 Sitemap: https://cloudbillingmanager.com/sitemap-pages.xml
 Sitemap: https://cloudbillingmanager.com/sitemap-core.xml
 Sitemap: https://cloudbillingmanager.com/sitemap-platform.xml
@@ -46,7 +52,7 @@ Sitemap: https://cloudbillingmanager.com/sitemap-blog.xml
 Sitemap: https://cloudbillingmanager.com/sitemap-resources.xml
 Sitemap: https://cloudbillingmanager.com/sitemap.xml
 
-# Host-safe backups (if root .xml returns 500)
+# Host-safe backups
 Sitemap: https://cloudbillingmanager.com/sitemap-pages.txt
 Sitemap: https://cloudbillingmanager.com/sitemap/sitemap-pages.xml
 Sitemap: https://cloudbillingmanager.com/sitemap-pages.php

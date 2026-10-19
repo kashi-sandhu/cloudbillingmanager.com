@@ -9,6 +9,13 @@ import {
   replacedSystems,
   whyUs,
 } from '../data/content.ts'
+import {
+  connectedWorkflowCopy,
+  connectedWorkflowSteps,
+  fleetLogisticsFeature,
+  whatsappOrderingFeature,
+} from '../data/features.ts'
+import { pricingPageCopy, pricingPlans } from '../data/pricing.ts'
 
 export type ChatReply = {
   text: string
@@ -169,7 +176,9 @@ export const chatStarters = [
   'Give me details of your company',
   'What is Cloud Billing Manager?',
   'Who is it for?',
-  'How does the pricing engine work?',
+  'How does AI WhatsApp ordering work?',
+  'Does it include fleet logistics?',
+  'What are your pricing plans?',
   'Does it include POS?',
   'How do I book a demo?',
 ] as const
@@ -190,6 +199,15 @@ function suggestionsFor(path?: string, href?: string) {
   if (path === '/why') {
     return ['Give me details of your company', 'Does it replace Sage?', 'How do I book a demo?']
   }
+  if (path === '/pricing') {
+    return ['How do I book a demo?', 'Does it include POS?', 'Does it include fleet logistics?']
+  }
+  if (path === '/features/ai-whatsapp-ordering') {
+    return ['Does AI auto-post invoices?', 'Does it include fleet logistics?', 'How do I book a demo?']
+  }
+  if (path === '/features/fleet-logistics') {
+    return ['How does AI WhatsApp ordering work?', 'What about inventory?', 'How do I book a demo?']
+  }
   if (path === '/platform/pos') {
     return ['How does the pricing engine work?', 'Does it handle VAT?', 'What about inventory?']
   }
@@ -205,10 +223,32 @@ function suggestionsFor(path?: string, href?: string) {
   return [...chatStarters]
 }
 
+function featureAnswer(
+  feature: typeof whatsappOrderingFeature | typeof fleetLogisticsFeature,
+) {
+  const highlights = feature.highlights.slice(0, 6).map((item) => `• ${item}`).join('\n')
+  const steps =
+    'processSteps' in feature
+      ? `\n\nProcess:\n${feature.processSteps.map((step, index) => `${index + 1}. ${step.label} — ${step.detail}`).join('\n')}`
+      : ''
+  return `${feature.nav}\n${feature.heroText}\n\nHighlights:\n${highlights}${steps}\n\nOpen the page for full detail.`
+}
+
+function pricingAnswer() {
+  const plans = pricingPlans
+    .map((plan) => {
+      const top = plan.highlights.slice(0, 4).map((item) => `  • ${item}`).join('\n')
+      return `${plan.name} — ${plan.price}${plan.period}${plan.popular ? ' (Most popular)' : ''}\n${plan.summary}\n${top}`
+    })
+    .join('\n\n')
+  return `${pricingPageCopy.title}\n${pricingPageCopy.subtitle}\n\n${plans}\n\n${pricingPageCopy.note}\n• Pricing page: ${company.website}/pricing\n• Book a demo: ${company.website}/demo`
+}
+
 function finish(reply: Omit<ChatReply, 'suggestions'> & { suggestions?: string[] }): ChatReply {
+  const next = reply.suggestions?.length ? reply.suggestions : suggestionsFor(reply.path, reply.href)
   return {
     ...reply,
-    suggestions: reply.suggestions?.length ? reply.suggestions : suggestionsFor(reply.path, reply.href),
+    suggestions: next.slice(0, 3),
   }
 }
 
@@ -332,11 +372,106 @@ const knowledge: Entry[] = [
       'Cloud Billing Manager includes VAT in the same platform.\n• Accounting covers VAT Reports.\n• Customer Billing includes Customer VAT – Calculate VAT automatically based on UK tax rules or from system settings.\n• POS includes VAT Calculation.\n• Settings include VAT Setting and VAT Invoice.',
   },
   {
+    title: 'AI WhatsApp Ordering',
+    path: '/features/ai-whatsapp-ordering',
+    keys: [
+      'whatsapp',
+      'ai',
+      'order',
+      'ordering',
+      'assistant',
+      'message',
+      'draft',
+      'recognition',
+      'chat',
+      'automation',
+    ],
+    phrases: [
+      'ai whatsapp',
+      'whatsapp ordering',
+      'whatsapp order',
+      'ai order',
+      'order assistant',
+      'ai assistant',
+      'whatsapp invoice',
+    ],
+    answer: featureAnswer(whatsappOrderingFeature),
+  },
+  {
+    title: 'Fleet & Logistics',
+    path: '/features/fleet-logistics',
+    keys: [
+      'fleet',
+      'logistic',
+      'logistics',
+      'vehicle',
+      'driver',
+      'delivery',
+      'route',
+      'dispatch',
+      'van',
+      'capacity',
+      'load',
+    ],
+    phrases: [
+      'fleet logistics',
+      'fleet management',
+      'delivery route',
+      'auto assign',
+      'loading slips',
+      'loading slip',
+      'live fleet',
+    ],
+    answer: `${featureAnswer(fleetLogisticsFeature)}\n\nAlso in Sales operations: ${
+      logistics ? `${logistics.title}: ${logistics.text}` : 'loading slips and vehicle assignment.'
+    }`,
+  },
+  {
+    title: 'Connected workflow',
+    path: '/features/ai-whatsapp-ordering',
+    keys: ['workflow', 'connected', 'end', 'to', 'pipeline'],
+    phrases: ['connected workflow', 'whatsapp to delivery', 'order to invoice to delivery'],
+    answer: `${connectedWorkflowCopy.headline}\n${connectedWorkflowCopy.text}\n\nSteps:\n${connectedWorkflowSteps.map((step, index) => `${index + 1}. ${step}`).join('\n')}`,
+  },
+  {
+    title: 'Pricing plans',
+    path: '/pricing',
+    keys: [
+      'pricing',
+      'plans',
+      'plan',
+      'starter',
+      'business',
+      'advanced',
+      'subscription',
+      'monthly',
+      'fee',
+      'cost',
+      'price',
+      'gbp',
+    ],
+    phrases: [
+      'pricing plans',
+      'pricing page',
+      'how much',
+      'monthly fee',
+      'starter plan',
+      'business plan',
+      'advanced plan',
+      '£59',
+      '£99',
+      '£199',
+    ],
+    answer: pricingAnswer(),
+  },
+  {
     title: 'Logistics & Distribution Management',
-    path: '/platform/sales',
+    path: '/features/fleet-logistics',
     keys: ['logistic', 'logistics', 'vehicle', 'driver', 'delivery', 'load'],
     phrases: ['loading slips', 'loading slip', 'invoices load'],
-    answer: logistics ? `${logistics.title}: ${logistics.text}` : '',
+    answer: logistics
+      ? `${logistics.title}: ${logistics.text}\n\nFor full fleet routes, drivers, vehicles and auto-assign, see Fleet & Logistics.`
+      : '',
   },
   {
     title: 'Smart Device Accessibility',
@@ -435,15 +570,32 @@ function intent(query: string): ChatReply | null {
   const q = query.toLowerCase()
 
   if (
-    /\b(cost|price list|pricing plan|licence fee|license fee|how much|subscription|monthly fee|annual fee|kitna paisa|kitni fee)\b/i.test(
+    /\b(cost|price list|pricing plan|licence fee|license fee|how much|subscription|monthly fee|annual fee|kitna paisa|kitni fee|pricing plans?|starter plan|business plan|advanced plan)\b/i.test(
       q,
     ) &&
     !/\b(customer.?specific|pricing engine|usp|selling price|margin|stock|invoice)\b/i.test(q)
   ) {
-    return finish({
-      text: `This website does not list Cloud Billing Manager licence or subscription prices. I will not estimate a figure.\n• Email ${company.email}\n• Call ${company.phone}\n• Landline ${company.landline}\n• Book a demo at ${company.website}/demo`,
-      path: '/contact',
-    })
+    return replyFrom(knowledge.find((entry) => entry.title === 'Pricing plans'))
+  }
+
+  if (
+    /\b(ai whatsapp|whatsapp order|whatsapp ordering|ai order|order assistant|whatsapp invoice|ai assistant)\b/i.test(
+      q,
+    )
+  ) {
+    return replyFrom(knowledge.find((entry) => entry.title === 'AI WhatsApp Ordering'))
+  }
+
+  if (
+    /\b(fleet logistics|fleet management|delivery route|auto.?assign|live fleet|fleet & logistics)\b/i.test(
+      q,
+    )
+  ) {
+    return replyFrom(knowledge.find((entry) => entry.title === 'Fleet & Logistics'))
+  }
+
+  if (/\b(connected workflow|whatsapp to delivery|order to invoice)\b/i.test(q)) {
+    return replyFrom(knowledge.find((entry) => entry.title === 'Connected workflow'))
   }
 
   for (const item of moduleIntents) {
@@ -457,8 +609,8 @@ function intent(query: string): ChatReply | null {
     return replyFrom(knowledge.find((entry) => entry.title === 'VAT and UK tax'))
   }
 
-  if (/\b(logistics?|vehicles?|drivers?|loading)\b/.test(q)) {
-    return replyFrom(knowledge.find((entry) => entry.title === 'Logistics & Distribution Management'))
+  if (/\b(logistics?|vehicles?|drivers?|loading|fleet|dispatch|routes?)\b/.test(q)) {
+    return replyFrom(knowledge.find((entry) => entry.title === 'Fleet & Logistics'))
   }
 
   if (/\b(mobile|tablet|laptop|remote access|anywhere|smart device|phone se|phone par)\b/.test(q)) {

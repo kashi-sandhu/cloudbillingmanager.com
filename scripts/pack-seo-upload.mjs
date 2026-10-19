@@ -30,8 +30,11 @@ const files = [
   'seo-manifest.json',
   'llms.txt',
   'google-search-console-indexing.txt',
+  'UPLOAD-FOR-GOOGLE.txt',
   'seo-sources.txt',
   'sitemap/sitemap-pages.xml',
+  'resources/index.html',
+  'resources/.htaccess',
 ]
 
 const readme = `CLOUD BILLING MANAGER — SEO UPLOAD (IMPORTANT)

@@ -1,6 +1,6 @@
 Cloud Billing Manager — Google indexing URL list
 Site: https://cloudbillingmanager.com
-Pages: 51
+Pages: 53
 Sitemap (submit in Search Console): https://cloudbillingmanager.com/sitemap-index.xml
 
 PRIORITY — request indexing first in Search Console URL Inspection:
@@ -16,10 +16,12 @@ https://cloudbillingmanager.com/industries/frozen-foods
 https://cloudbillingmanager.com/contact
 https://cloudbillingmanager.com/about
 https://cloudbillingmanager.com/blog
-https://cloudbillingmanager.com/resources
+https://cloudbillingmanager.com/pricing
 
-ALL OTHER PAGES (38):
+ALL OTHER PAGES (40):
 https://cloudbillingmanager.com/why
+https://cloudbillingmanager.com/features/ai-whatsapp-ordering
+https://cloudbillingmanager.com/features/fleet-logistics
 https://cloudbillingmanager.com/resources/inventory-management-checklist
 https://cloudbillingmanager.com/resources/inventory-management-guide
 https://cloudbillingmanager.com/resources/inventory-software-vs-spreadsheets
@@ -65,4 +67,4 @@ After deploy:
 4. Request indexing on priority URLs above
 5. Wait 1–2 weeks, search: site:cloudbillingmanager.com
 
-Generated: 2026-09-07
+Generated: 2026-10-19

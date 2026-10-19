@@ -6,7 +6,8 @@ export const entitySameAs = [
   company.website.replace(/\/$/, ''),
   company.groupSite,
   'https://www.linkedin.com/company/avantcore/',
-  'https://www.facebook.com/share/1D8UoyVNHh/',
+  'https://www.facebook.com/cloudbillingmanager',
+  'https://www.instagram.com/cloudbillingmanager/',
 ] as const
 
 /** Shared head/meta constants (AVANTCORE-style indexing signals — no layout impact). */
@@ -49,7 +50,9 @@ export function buildStaticHeadJsonLd(siteUrl: string) {
       url: company.groupSite,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/brand/cloudbillingmanager-logo.png`,
+        url: `${siteUrl}/images/brand/cloudbillingmanager-icon.png`,
+        width: 512,
+        height: 512,
       },
       email: company.email,
       brand: {

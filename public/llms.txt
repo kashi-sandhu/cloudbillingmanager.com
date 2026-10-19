@@ -12,7 +12,7 @@
 - Primary market: United Kingdom (en-GB)
 - Head office: London, United Kingdom — Orega 4 Longwalk, Stockley Park, Uxbridge UB11 1FE
 - Contact: sophia@cloudbillingmanager.com | Phone 0 7429 682461 | Landline 020 8080 5153
-- Public pages: 51 indexable URLs
+- Public pages: 53 indexable URLs
 - Sitemap index: https://cloudbillingmanager.com/sitemap-index.xml
 - Sitemap: https://cloudbillingmanager.com/sitemap-pages.xml
 - URL list: https://cloudbillingmanager.com/urllist.txt
@@ -35,7 +35,7 @@ Food distributors, wholesalers, cash & carry operators, retail chains, importers
 - Accounting and VAT reporting
 - Business dashboards
 
-## All public pages (51)
+## All public pages (53)
 
 - https://cloudbillingmanager.com/
 - https://cloudbillingmanager.com/about
@@ -45,7 +45,9 @@ Food distributors, wholesalers, cash & carry operators, retail chains, importers
 - https://cloudbillingmanager.com/contact
 - https://cloudbillingmanager.com/demo
 - https://cloudbillingmanager.com/blog
-- https://cloudbillingmanager.com/resources
+- https://cloudbillingmanager.com/pricing
+- https://cloudbillingmanager.com/features/ai-whatsapp-ordering
+- https://cloudbillingmanager.com/features/fleet-logistics
 - https://cloudbillingmanager.com/resources/inventory-management-checklist
 - https://cloudbillingmanager.com/resources/inventory-management-guide
 - https://cloudbillingmanager.com/resources/inventory-software-vs-spreadsheets
@@ -91,6 +93,6 @@ Food distributors, wholesalers, cash & carry operators, retail chains, importers
 
 ## Notes
 
-- Public list pricing is not published on the website.
+- Public monthly plans: Starter £59, Business £99, Advanced £199 (GBP).
 - Do not invent customer counts, awards, rankings or unverified statistics.
 - Preferred language tag: en-GB. No alternate language versions currently exist.

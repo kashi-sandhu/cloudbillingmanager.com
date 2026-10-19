@@ -5,15 +5,19 @@ import {
   ClipboardList,
   FileText,
   LayoutDashboard,
+  MessageSquare,
   MonitorSmartphone,
   Package,
   Percent,
   Receipt,
   ShoppingCart,
+  Truck,
   Warehouse,
 } from 'lucide-react'
+import WhatsAppOrderVisual from '../features/WhatsAppOrderVisual.tsx'
+import FleetLogisticsVisual from '../features/FleetLogisticsVisual.tsx'
 
-type ViewId =
+export type PreviewViewId =
   | 'dashboard'
   | 'invoice'
   | 'sales'
@@ -23,9 +27,15 @@ type ViewId =
   | 'purchasing'
   | 'billing'
   | 'accounting'
+  | 'whatsapp'
+  | 'fleet'
+
+type ViewId = PreviewViewId
 
 const nav: { id: ViewId; icon: LucideIcon; label: string }[] = [
   { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { id: 'whatsapp', icon: MessageSquare, label: 'AI Order' },
+  { id: 'fleet', icon: Truck, label: 'Fleet' },
   { id: 'purchasing', icon: ClipboardList, label: 'Purchasing' },
   { id: 'pricing', icon: Percent, label: 'Pricing' },
   { id: 'sales', icon: ShoppingCart, label: 'Sales' },
@@ -69,8 +79,13 @@ function formatPounds(value: number) {
   return `£${value.toLocaleString('en-GB')}`
 }
 
-export default function DashboardPreview() {
-  const [view, setView] = useState<ViewId>('dashboard')
+type DashboardPreviewProps = {
+  activeView?: PreviewViewId
+  pauseRotate?: boolean
+}
+
+export default function DashboardPreview({ activeView, pauseRotate = false }: DashboardPreviewProps) {
+  const [view, setView] = useState<ViewId>(activeView ?? 'dashboard')
   const [sales, setSales] = useState(18420)
   const [monthly, setMonthly] = useState(246890)
   const [outstanding, setOutstanding] = useState(41275)
@@ -79,6 +94,11 @@ export default function DashboardPreview() {
   const [bars, setBars] = useState(baseBars)
 
   useEffect(() => {
+    if (activeView) setView(activeView)
+  }, [activeView])
+
+  useEffect(() => {
+    if (pauseRotate || activeView) return
     const timer = window.setInterval(() => {
       setView((current) => {
         const order = nav.map((item) => item.id)
@@ -86,7 +106,7 @@ export default function DashboardPreview() {
       })
     }, 6500)
     return () => window.clearInterval(timer)
-  }, [view])
+  }, [view, pauseRotate, activeView])
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -102,7 +122,7 @@ export default function DashboardPreview() {
     return () => window.clearInterval(timer)
   }, [])
 
-  const screens: Record<Exclude<ViewId, 'invoice'>, Screen> = {
+  const screens: Record<Exclude<ViewId, 'invoice' | 'whatsapp' | 'fleet'>, Screen> = {
     dashboard: {
       kicker: 'One Dashboard. Complete Business Visibility.',
       title: 'Powerful Dashboard Features',
@@ -327,7 +347,10 @@ export default function DashboardPreview() {
     },
   }
 
-  const screen = view === 'invoice' || view === 'pos' ? null : screens[view]
+  const screen =
+    view === 'invoice' || view === 'pos' || view === 'whatsapp' || view === 'fleet'
+      ? null
+      : screens[view]
 
   return (
     <div className="dash-shell flex h-full min-h-0 flex-col overflow-hidden bg-white text-left">
@@ -343,13 +366,13 @@ export default function DashboardPreview() {
       </div>
 
       <div className="grid min-h-0 flex-1 grid-cols-[64px_1fr] md:grid-cols-[76px_1fr]">
-        <aside className="flex h-full flex-col items-center justify-evenly bg-[#17345c] py-1">
+        <aside className="flex h-full flex-col items-center justify-evenly gap-0.5 overflow-y-auto bg-[#17345c] py-1">
           {nav.map((item) => (
             <button
               key={item.id}
               type="button"
               onClick={() => setView(item.id)}
-              className={`flex w-[52px] flex-col items-center gap-0.5 rounded-lg px-1 py-1.5 transition-all duration-500 ease-out ${
+              className={`flex w-[52px] shrink-0 flex-col items-center gap-0.5 rounded-lg px-1 py-1 transition-all duration-500 ease-out ${
                 view === item.id ? 'bg-white/15 text-white' : 'text-white/40 hover:bg-white/8 hover:text-white'
               }`}
             >
@@ -359,7 +382,11 @@ export default function DashboardPreview() {
           ))}
         </aside>
 
-        <div className="flex min-h-0 flex-col bg-[#eef2f7] p-3 md:p-4">
+        <div
+          className={`flex min-h-0 flex-col bg-[#eef2f7] ${
+            view === 'whatsapp' || view === 'fleet' ? 'p-2 md:p-2.5' : 'p-3 md:p-4'
+          }`}
+        >
           {view === 'invoice' ? (
             <div key={view} className="dash-view flex min-h-0 flex-1 flex-col">
               <div className="mb-2 flex h-10 shrink-0 items-end justify-between gap-2">
@@ -417,6 +444,14 @@ export default function DashboardPreview() {
                   decoding="async"
                 />
               </div>
+            </div>
+          ) : view === 'whatsapp' ? (
+            <div key={view} className="dash-view dash-feature flex min-h-0 flex-1 flex-col">
+              <WhatsAppOrderVisual />
+            </div>
+          ) : view === 'fleet' ? (
+            <div key={view} className="dash-view dash-feature flex min-h-0 flex-1 flex-col">
+              <FleetLogisticsVisual />
             </div>
           ) : screen ? (
             <>

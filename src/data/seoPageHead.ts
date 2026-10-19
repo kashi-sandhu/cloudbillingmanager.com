@@ -245,13 +245,13 @@ export function getPageRelatedLinks(pathname: string): SeoLinkTag[] {
       { rel: 'related', href: abs('/contact'), title: 'Contact' },
       { rel: 'related', href: abs('/why'), title: 'Why Cloud Billing Manager' },
     ],
-    '/resources': [
-      { rel: 'related', href: abs('/blog'), title: 'Blog' },
-      { rel: 'related', href: abs('/platform/inventory'), title: 'Inventory module' },
-      { rel: 'related', href: abs('/resources/glossary'), title: 'Glossary' },
+    '/pricing': [
+      { rel: 'related', href: abs('/demo'), title: 'Book a demo' },
+      { rel: 'related', href: abs('/platform'), title: 'Platform modules' },
+      { rel: 'related', href: abs('/contact'), title: 'Contact' },
     ],
     '/blog': [
-      { rel: 'related', href: abs('/resources'), title: 'Resources' },
+      { rel: 'related', href: abs('/pricing'), title: 'Pricing' },
       { rel: 'related', href: abs('/platform'), title: 'Platform' },
       { rel: 'related', href: abs('/demo'), title: 'Book a demo' },
     ],

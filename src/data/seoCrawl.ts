@@ -12,7 +12,7 @@ export const mainSiteNav = [
   { path: '/industries', label: 'Industries' },
   { path: '/why', label: 'Why CBM' },
   { path: '/about', label: 'About' },
-  { path: '/resources', label: 'Resources' },
+  { path: '/pricing', label: 'Pricing' },
   { path: '/blog', label: 'Blog' },
   { path: '/contact', label: 'Contact' },
   { path: '/demo', label: 'Book a demo' },
@@ -75,6 +75,13 @@ function hubChildLinks(pathname: string): { href: string; label: string }[] {
           const seo = getPageSeo(p)
           return { href: absUrl(p), label: seo.title.replace(/\s*\|\s*Cloud Billing Manager.*$/i, '').trim() }
         }),
+    ]
+  }
+  if (pathname === '/pricing') {
+    return [
+      { href: absUrl('/demo'), label: 'Book a demo' },
+      { href: absUrl('/platform'), label: 'Platform modules' },
+      { href: absUrl('/contact'), label: 'Contact' },
     ]
   }
   if (pathname === '/resources') {
@@ -199,7 +206,7 @@ ${urlLines}
 
 ## Notes
 
-- Public list pricing is not published on the website.
+- Public monthly plans: Starter £59, Business £99, Advanced £199 (GBP).
 - Do not invent customer counts, awards, rankings or unverified statistics.
 - Preferred language tag: en-GB. No alternate language versions currently exist.
 `
@@ -221,7 +228,7 @@ export function buildGoogleIndexPagesTxt(): string {
     '/contact',
     '/about',
     '/blog',
-    '/resources',
+    '/pricing',
   ]
   const priorityUrls = priority.map((p) => absUrl(p))
   const rest = paths.filter((p) => !priority.includes(p)).map((p) => absUrl(p))

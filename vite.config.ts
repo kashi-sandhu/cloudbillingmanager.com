@@ -70,34 +70,17 @@ function writeSitemaps() {
       writeFileSync(resolve(rootDir, dir, 'sitemap', 'sitemap-pages.xml'), plain, 'utf8')
       writeFileSync(
         resolve(rootDir, dir, 'DEPLOY-SEO-NOW.txt'),
-        `CLOUD BILLING MANAGER — FINAL UPLOAD + GOOGLE INDEXING
+        `CLOUD BILLING MANAGER — UPLOAD NOW (GOOGLE INDEX FIX)
 =====================================================
 
-1) Upload ENTIRE dist/ folder → cPanel public_html (replace all)
+CRITICAL: Live robots.txt is currently WRONG (AI content-signal file).
+Upload THIS dist/ completely or Google will keep missing your sitemaps.
 
-2) MUST replace these (404 fix + SEO):
-   - .htaccess
-   - assets/  (new JavaScript)
-   - sitemap-index.xml
-   - sitemap-pages.xml, sitemap-core.xml, sitemap-platform.xml
-   - sitemap-industries.xml, sitemap-blog.xml, sitemap-resources.xml
-   - sitemap.xml, robots.txt
-   - all page folders (about/, demo/, platform/, …)
-
-3) Browser test (must NOT say Page not found):
-   https://cloudbillingmanager.com/about
-   https://cloudbillingmanager.com/demo
-   https://cloudbillingmanager.com/platform
-   https://cloudbillingmanager.com/sitemap-index.xml
-
-4) Google Search Console → Sitemaps → add:
-   sitemap-index.xml
-   (full URL: https://cloudbillingmanager.com/sitemap-index.xml)
-
-5) URL Inspection → Request indexing for:
-   /  /demo  /platform  /about  /contact
-
-6) Wait 3–14 days, then search: site:cloudbillingmanager.com
+1) Upload ENTIRE dist/ → cPanel public_html (replace all)
+2) MUST replace: robots.txt, .htaccess, assets/, resources/, pricing/
+3) Test robots.txt — must include Sitemap: ...sitemap-index.xml
+4) Test /resources — must redirect to /pricing (not 404)
+5) Search Console → submit sitemap-index.xml + Request indexing
 
 Generated: ${new Date().toISOString()}
 `,

@@ -9,6 +9,7 @@ import ConversionBand from '../components/ui/ConversionBand.tsx'
 import IconBadge from '../components/ui/IconBadge.tsx'
 import SectionHeading from '../components/ui/SectionHeading.tsx'
 import ShowMoreGrid from '../components/ui/ShowMoreGrid.tsx'
+import HomeFeatureSections from '../components/features/HomeFeatureSections.tsx'
 import {
   benefits,
   capabilities,
@@ -21,6 +22,7 @@ import {
   replacedSystems,
   whyUs,
 } from '../data/content.ts'
+import { pricingPageCopy, pricingPlans } from '../data/pricing.ts'
 import { capabilityIcons, industryIcons, moduleIcons, replacedSystemIcons } from '../data/icons.ts'
 
 const capabilityLinks = [
@@ -199,6 +201,8 @@ export default function Home() {
         </div>
       </section>
 
+      <HomeFeatureSections />
+
       <section className="dash-section py-12 text-white sm:py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
@@ -275,6 +279,44 @@ export default function Home() {
             <Button to="/contact" variant="white" className="mt-8 w-full sm:w-auto">
               Contact Us
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading eyebrow="Pricing" title={pricingPageCopy.subtitle} text={pricingPageCopy.intro} />
+
+          <div className="pricing-plans mt-10">
+            {pricingPlans.map((plan) => (
+              <article
+                key={plan.id}
+                className={`pricing-plan${plan.popular ? ' is-popular' : ''}`}
+              >
+                {plan.popular ? <span className="pricing-badge">Most Popular</span> : null}
+                <header className="pricing-plan-head">
+                  <h2 className="pricing-plan-name">{plan.name}</h2>
+                  <p className="pricing-plan-summary">{plan.summary}</p>
+                  <p className="pricing-plan-price">
+                    <span className="pricing-amount">{plan.price}</span>
+                    <span className="pricing-period">{plan.period}</span>
+                  </p>
+                </header>
+                <ul className="pricing-highlights">
+                  {plan.highlights.map((item) => (
+                    <li key={item}>
+                      <CheckCircle2 className="pricing-highlight-icon" strokeWidth={2.5} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pricing-plan-cta">
+                  <Button to={plan.cta.to} className="w-full" variant={plan.popular ? 'accent' : 'outline'}>
+                    {plan.cta.label}
+                  </Button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

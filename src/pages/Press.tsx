@@ -68,8 +68,8 @@ export default function Press() {
                 </a>
               </li>
               <li>
-                <a className="font-semibold text-brand" href={`${siteUrl}/resources`}>
-                  Resources hub
+                <a className="font-semibold text-brand" href={`${siteUrl}/pricing`}>
+                  Pricing
                 </a>
               </li>
             </ul>
